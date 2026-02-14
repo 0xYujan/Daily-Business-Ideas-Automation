@@ -59,6 +59,16 @@ schtasks /Query /TN "DailyBusinessIdeas_Morning"
 schtasks /Query /TN "DailyBusinessIdeas_Evening"
 ```
 
+### 5. Maintenance & Updates
+To update your VPS with the latest code and ideas:
+```bash
+ssh root@YOUR_VPS_IP
+cd ~/daily-business-ideas-automation
+git pull
+```
+*This blindly pulls the latest version from GitHub. If you added local config changes, you might need to stash them first.*
+
+
 ---
 
 ### 5. Deploy to VPS (Linux)
