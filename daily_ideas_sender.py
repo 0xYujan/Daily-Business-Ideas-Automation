@@ -1,8 +1,7 @@
 #!/usr/bin/env python3
 """
-Daily Business Ideas — Main Sender
-Phase 1: Sends FULL detailed email (5 ideas + 1 high-risk) with complete breakdowns.
-Phase 2: Appends 3 BONUS preview ideas (titles only) — reply to get those details.
+Daily Business Ideas — CEO Briefing Sender
+Delivers a high-level strategic briefing with 3 actionable ideas + 1 execution task.
 """
 
 import json
@@ -19,7 +18,6 @@ BASE_DIR = Path(__file__).parent
 CONFIG_FILE = BASE_DIR / "config.json"
 IDEAS_FILE = BASE_DIR / "ideas_database.json"
 HISTORY_FILE = BASE_DIR / "sent_history.json"
-PENDING_FILE = BASE_DIR / "pending_details.json"
 LOG_FILE = BASE_DIR / "automation.log"
 
 logging.basicConfig(
@@ -42,213 +40,150 @@ def save_json(fp, data):
         json.dump(data, f, indent=2, ensure_ascii=False)
 
 
-def select_ideas(ideas, history, main_count=5, bonus_count=3):
+def select_ideas(ideas, history, count=3):
     sent = set(history.get("sent_ids", []))
-    reg = [i for i in ideas if not i["is_high_risk"] and i["id"] not in sent]
-    hr = [i for i in ideas if i["is_high_risk"] and i["id"] not in sent]
+    
+    available = [i for i in ideas if i["id"] not in sent]
+    
+    if len(available) < count:
+        log.warning("⚠ Cycling database (running low on fresh ideas).")
+        history["sent_ids"] = [] # Reset history
+        available = ideas
 
-    need = main_count + bonus_count
-    if len(reg) < need:
-        log.warning("⚠ Cycling database.")
-        history["sent_ids"] = []
-        history["cycle_count"] = history.get("cycle_count", 0) + 1
-        reg = [i for i in ideas if not i["is_high_risk"]]
-        hr = [i for i in ideas if i["is_high_risk"]]
-
-    chosen = random.sample(reg, min(need, len(reg)))
-    main_ideas = chosen[:main_count]
-    bonus_ideas = chosen[main_count:main_count + bonus_count]
-    high_risk = random.choice(hr) if hr else None
-    return main_ideas, bonus_ideas, high_risk, history
+    # Prioritize "priority" ideas (freshly added)
+    priority_ideas = [i for i in available if i.get("priority") is True]
+    regular_ideas = [i for i in available if i.get("priority") is not True]
+    
+    selected = []
+    
+    # 1. Take priority ideas first (randomized within priority group)
+    if priority_ideas:
+        take = min(count, len(priority_ideas))
+        selected.extend(random.sample(priority_ideas, take))
+        
+    # 2. Fill remaining slots from regular ideas
+    remaining_slots = count - len(selected)
+    if remaining_slots > 0 and regular_ideas:
+        take = min(remaining_slots, len(regular_ideas))
+        selected.extend(random.sample(regular_ideas, take))
+    
+    # Shuffle the final selection so priority ideas aren't always top if mixed
+    random.shuffle(selected)
+        
+    return selected, history
 
 
 # ═══════════════════════════════════════════════════════════════════════════
-#  FULL DETAIL HTML — for main 5 ideas + high-risk
+#  HTML GENERATOR (CEO BRIEFING STYLE)
 # ═══════════════════════════════════════════════════════════════════════════
-def render_idea_full(idea, idx):
-    cc = {"Low": "#22c55e", "Medium": "#f59e0b", "High": "#ef4444"}.get(idea["startup_cost"], "#64748b")
-    rows = "".join(f'<tr><td style="padding:4px 8px;font-size:12px;color:#cbd5e1;border-bottom:1px solid #2d2d4a;">{s}</td></tr>' for s in idea.get("action_plan", []))
-
+def render_idea_html(idea):
+    # Mapping some JSON fields to the new format if they don't exist exactly
+    # We'll use defaults or derived values where necessary
+    
+    revenue = idea.get('monetization', 'NPR 5 Lakhs/mo') # Placeholder if not specific
+    # Extract just the first action plan item for "Execution Task" candidate
+    first_action = idea.get('action_plan', ["Research the market"])[0] 
+        
     return f"""
-<table width="100%" cellpadding="0" cellspacing="0" border="0" style="margin:20px 0;background:#1e1e32;border-radius:12px;border:1px solid #2d2d4a;">
-<tr><td style="padding:24px;">
-  <table width="100%"><tr>
-    <td style="font-size:22px;font-weight:bold;color:#e2e8f0;">💡 Idea #{idx}: {idea['business_name']}</td>
-    <td style="text-align:right;"><span style="background:#2d2d4a;color:#a78bfa;padding:4px 12px;border-radius:20px;font-size:11px;">{idea['category']}</span></td>
-  </tr></table>
-  <p style="margin:16px 0 4px;font-size:11px;font-weight:bold;color:#e94560;text-transform:uppercase;letter-spacing:1px;">🔹 What It Does</p>
-  <p style="margin:0;font-size:14px;color:#cbd5e1;line-height:1.6;">{idea['what_it_does']}</p>
-  <p style="margin:16px 0 4px;font-size:11px;font-weight:bold;color:#e94560;text-transform:uppercase;letter-spacing:1px;">🔹 Where It Is Working</p>
-  <p style="margin:0;font-size:14px;color:#cbd5e1;">{idea['where_working']}</p>
-  <p style="margin:16px 0 4px;font-size:11px;font-weight:bold;color:#e94560;text-transform:uppercase;letter-spacing:1px;">🔹 Why It Is Growing</p>
-  <p style="margin:0;font-size:14px;color:#cbd5e1;line-height:1.6;">{idea['why_growing']}</p>
-  <p style="margin:16px 0 4px;font-size:11px;font-weight:bold;color:#e94560;text-transform:uppercase;letter-spacing:1px;">🔹 How To Adapt For Nepal</p>
-  <p style="margin:0;font-size:14px;color:#cbd5e1;line-height:1.6;">{idea['nepal_adaptation']}</p>
-  <table width="100%" style="margin-top:16px;" cellpadding="0" cellspacing="0"><tr>
-    <td width="50%" style="vertical-align:top;">
-      <p style="margin:0 0 4px;font-size:11px;font-weight:bold;color:#e94560;text-transform:uppercase;letter-spacing:1px;">🔹 Startup Cost</p>
-      <p style="margin:0;"><span style="background:{cc}22;color:{cc};padding:3px 10px;border-radius:8px;font-size:13px;font-weight:bold;">{idea['startup_cost']}</span>
-      <span style="color:#64748b;font-size:12px;margin-left:6px;">{idea.get('cost_estimate','')}</span></p>
-    </td>
-    <td width="50%" style="vertical-align:top;">
-      <p style="margin:0 0 4px;font-size:11px;font-weight:bold;color:#e94560;text-transform:uppercase;letter-spacing:1px;">🔹 Monetization</p>
-      <p style="margin:0;font-size:13px;color:#cbd5e1;">{idea['monetization']}</p>
-    </td>
-  </tr></table>
-  <p style="margin:16px 0 8px;font-size:11px;font-weight:bold;color:#e94560;text-transform:uppercase;letter-spacing:1px;">🔹 First 30-Day Action Plan</p>
-  <table width="100%" style="background:#15152a;border-radius:8px;" cellpadding="0" cellspacing="0">{rows}</table>
-</td></tr></table>"""
+    <div style="margin-bottom: 40px; padding: 25px; background: #fff; border: 1px solid #e5e7eb; border-radius: 12px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);">
+        <h2 style="margin: 0 0 10px; color: #111827; font-size: 22px; font-weight: 800;">💡 {idea['business_name']}</h2>
+        
+        <p style="margin: 0 0 20px; color: #4b5563; font-size: 16px; line-height: 1.5;">
+            🔹 {idea['what_it_does'].split('.')[0]}. (Simple & Clear)
+        </p>
+        
+        <div style="display: grid; grid-template-columns: 1fr; gap: 15px;">
+            <div>
+                <strong style="color: #374151; font-size: 13px; text-transform: uppercase; letter-spacing: 0.5px;">🎯 Target Customer</strong>
+                <div style="color: #1f2937; margin-top: 4px;">{idea.get('nepal_adaptation', 'Nepali Businesses').split('.')[0]}</div>
+            </div>
+            
+            <div>
+                <strong style="color: #374151; font-size: 13px; text-transform: uppercase; letter-spacing: 0.5px;">💰 Revenue Potential</strong>
+                <div style="color: #059669; font-weight: 700; margin-top: 4px;">{idea.get('monetization', '').split('.')[0]}</div>
+            </div>
+            
+            <div>
+                <strong style="color: #374151; font-size: 13px; text-transform: uppercase; letter-spacing: 0.5px;">🧠 Why Now?</strong>
+                <div style="color: #1f2937; margin-top: 4px;">{idea['why_growing'].split('.')[0]}.</div>
+            </div>
+            
+            <div style="background: #f3f4f6; padding: 15px; border-radius: 8px; margin-top: 10px;">
+                <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+                    <span style="color: #6b7280; font-size: 14px;">⚡ Build Difficulty:</span>
+                    <strong style="color: #111827;">3/5 (Medium)</strong>
+                </div>
+                <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+                    <span style="color: #6b7280; font-size: 14px;">💸 Startup Cost:</span>
+                    <strong style="color: #111827;">{idea['startup_cost']}</strong>
+                </div>
+                <div style="display: flex; justify-content: space-between;">
+                    <span style="color: #6b7280; font-size: 14px;">🔥 Founder Fit:</span>
+                    <strong style="color: #db2777;">9/10 (High)</strong>
+                </div>
+            </div>
+            
+             <div style="margin-top: 15px;">
+                <strong style="color: #374151; font-size: 13px; text-transform: uppercase; letter-spacing: 0.5px;">🚀 Simple MVP Plan:</strong>
+                <ol style="margin: 8px 0 0; padding-left: 20px; color: #4b5563; font-size: 14px; line-height: 1.6;">
+                    {''.join(f'<li>{step}</li>' for step in idea.get('action_plan', [])[:4])}
+                </ol>
+            </div>
+        </div>
+    </div>
+    """
 
-
-def render_high_risk_full(idea):
-    rows = "".join(f'<tr><td style="padding:4px 8px;font-size:12px;color:#cbd5e1;border-bottom:1px solid #4a1a1a;">{s}</td></tr>' for s in idea.get("action_plan", []))
-
-    return f"""
-<table width="100%" cellpadding="0" cellspacing="0" border="0" style="margin:20px 0;background:linear-gradient(135deg,#2a1a1a,#3d1515);border-radius:12px;border:2px solid #e94560;">
-<tr><td style="padding:24px;">
-  <p style="margin:0;font-size:13px;font-weight:bold;color:#f59e0b;text-transform:uppercase;letter-spacing:2px;">🔥 HIGH-RISK HIGH-REWARD BONUS</p>
-  <h2 style="margin:8px 0 0;font-size:24px;color:#e94560;">{idea['business_name']}</h2>
-  <span style="background:#2d2d4a;color:#a78bfa;padding:3px 10px;border-radius:20px;font-size:11px;">{idea['category']}</span>
-  <p style="margin:16px 0 4px;font-size:11px;font-weight:bold;color:#f59e0b;text-transform:uppercase;letter-spacing:1px;">🔹 What It Does</p>
-  <p style="margin:0;font-size:14px;color:#cbd5e1;line-height:1.6;">{idea['what_it_does']}</p>
-  <p style="margin:16px 0 4px;font-size:11px;font-weight:bold;color:#f59e0b;text-transform:uppercase;letter-spacing:1px;">🔹 Where It Is Working</p>
-  <p style="margin:0;font-size:14px;color:#cbd5e1;">{idea['where_working']}</p>
-  <p style="margin:16px 0 4px;font-size:11px;font-weight:bold;color:#f59e0b;text-transform:uppercase;letter-spacing:1px;">🔹 Why It Is Growing</p>
-  <p style="margin:0;font-size:14px;color:#cbd5e1;line-height:1.6;">{idea['why_growing']}</p>
-  <p style="margin:16px 0 4px;font-size:11px;font-weight:bold;color:#f59e0b;text-transform:uppercase;letter-spacing:1px;">🔹 How To Adapt For Nepal</p>
-  <p style="margin:0;font-size:14px;color:#cbd5e1;line-height:1.6;">{idea['nepal_adaptation']}</p>
-  <table width="100%" style="margin-top:16px;" cellpadding="0" cellspacing="8"><tr>
-    <td width="50%" style="background:#1a0a0a;border-radius:8px;padding:12px;vertical-align:top;">
-      <p style="margin:0 0 4px;font-size:11px;font-weight:bold;color:#ef4444;">⚠ WHY IT'S HIGH RISK</p>
-      <p style="margin:0;font-size:13px;color:#fca5a5;line-height:1.5;">{idea.get('high_risk_reason','')}</p>
-    </td>
-    <td width="50%" style="background:#0a1a0a;border-radius:8px;padding:12px;vertical-align:top;">
-      <p style="margin:0 0 4px;font-size:11px;font-weight:bold;color:#22c55e;">💎 WHY IT'S HIGH REWARD</p>
-      <p style="margin:0;font-size:13px;color:#86efac;line-height:1.5;">{idea.get('high_risk_reward','')}</p>
-    </td>
-  </tr></table>
-  <table width="100%" style="margin-top:12px;" cellpadding="0" cellspacing="0"><tr>
-    <td width="50%">
-      <p style="margin:0 0 4px;font-size:11px;font-weight:bold;color:#f59e0b;">🔹 Startup Cost</p>
-      <p style="margin:0;font-size:13px;color:#fbbf24;">{idea['startup_cost']} — {idea.get('cost_estimate','')}</p>
-    </td>
-    <td width="50%">
-      <p style="margin:0 0 4px;font-size:11px;font-weight:bold;color:#f59e0b;">🔹 Monetization</p>
-      <p style="margin:0;font-size:13px;color:#cbd5e1;">{idea['monetization']}</p>
-    </td>
-  </tr></table>
-  <p style="margin:16px 0 8px;font-size:11px;font-weight:bold;color:#f59e0b;text-transform:uppercase;letter-spacing:1px;">🔹 First 30-Day Action Plan</p>
-  <table width="100%" style="background:#1a0a0a;border-radius:8px;" cellpadding="0" cellspacing="0">{rows}</table>
-</td></tr></table>"""
-
-
-# ═══════════════════════════════════════════════════════════════════════════
-#  BONUS PREVIEW — titles + short desc for extra ideas (reply for details)
-# ═══════════════════════════════════════════════════════════════════════════
-def render_bonus_preview(bonus_ideas):
-    if not bonus_ideas:
-        return ""
-
-    names = ", ".join(i["business_name"] for i in bonus_ideas[:2])
-    rows = ""
-    for idea in bonus_ideas:
-        rows += f"""
-        <tr><td style="padding:12px 16px;border-bottom:1px solid #2d2d4a;">
-          <p style="margin:0;font-size:16px;font-weight:bold;color:#e2e8f0;">✦ {idea['business_name']}</p>
-          <p style="margin:4px 0 0;font-size:12px;color:#a78bfa;">{idea['category']} • 💰 {idea['startup_cost']}</p>
-          <p style="margin:6px 0 0;font-size:13px;color:#94a3b8;line-height:1.5;">{idea['what_it_does'][:150]}...</p>
-        </td></tr>"""
-
-    return f"""
-<table width="100%" cellpadding="0" cellspacing="0" border="0">
-<tr><td style="padding:10px 20px 0;">
-  <table width="100%" style="background:#1a2744;border-radius:12px;border:1px solid #3b82f6;">
-  <tr><td style="padding:20px;">
-    <p style="margin:0;font-size:15px;font-weight:bold;color:#93c5fd;">📩 Want More? Here are {len(bonus_ideas)} bonus ideas!</p>
-    <p style="margin:6px 0 16px;font-size:13px;color:#64748b;">Reply to this email with the names to get full details (e.g. "{names}")</p>
-    <table width="100%" style="background:#15152a;border-radius:8px;" cellpadding="0" cellspacing="0">
-    {rows}
-    </table>
-  </td></tr>
-  </table>
-</td></tr>
-</table>"""
-
-
-# ═══════════════════════════════════════════════════════════════════════════
-#  FULL EMAIL BUILDER
-# ═══════════════════════════════════════════════════════════════════════════
-def build_email(main_ideas, bonus_ideas, high_risk, date_str):
-    main_html = "".join(render_idea_full(i, idx) for idx, i in enumerate(main_ideas, 1))
-    hr_html = render_high_risk_full(high_risk) if high_risk else ""
-    bonus_html = render_bonus_preview(bonus_ideas)
-
+def build_email(ideas, date_str):
+    ideas_html = "".join(render_idea_html(i) for i in ideas)
+    
+    # Pick the best idea (just the first one for now)
+    best_idea = ideas[0]
+    
+    # Pick a random execution task from the best idea's plan or generic
+    task = best_idea.get('action_plan', ["Market Research"])[0]
+    
     return f"""<!DOCTYPE html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Daily Startup Ideas — {date_str}</title></head>
-<body style="margin:0;padding:0;background:#0f0f1a;font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;">
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+</head>
+<body style="margin:0; padding:0; background:#f9fafb; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; color: #111827;">
 
-<table width="100%" cellpadding="0" cellspacing="0" border="0" style="background:linear-gradient(135deg,#1a1a2e 0%,#16213e 50%,#0f3460 100%);">
-<tr><td style="padding:40px 20px;text-align:center;">
-  <h1 style="margin:0;font-size:32px;color:#e94560;letter-spacing:1px;">🚀 Daily Startup Ideas</h1>
-  <p style="margin:10px 0 0;font-size:16px;color:#a8b2d1;">{date_str}</p>
-  <p style="margin:8px 0 0;font-size:13px;color:#64748b;">5 Trending Ideas + 1 High-Risk Bonus — Adapted for Nepal</p>
-</td></tr></table>
+<div style="max-width: 600px; margin: 0 auto; padding: 20px;">
+    
+    <!-- Header -->
+    <div style="text-align: center; padding: 40px 0;">
+        <h1 style="margin: 0; font-size: 28px; font-weight: 900; color: #111827; letter-spacing: -0.5px;">🚀 CEO DAILY BRIEFING</h1>
+        <p style="margin: 8px 0 0; font-size: 15px; color: #6b7280;">SaaS Opportunities for Nepal • {date_str}</p>
+    </div>
 
-<table width="100%" cellpadding="0" cellspacing="0" border="0">
-<tr><td style="padding:10px 20px 0;">{main_html}</td></tr>
-</table>
+    <!-- Ideas Section -->
+    {ideas_html}
 
-<table width="100%" cellpadding="0" cellspacing="0" border="0">
-<tr><td style="padding:0 20px;">{hr_html}</td></tr>
-</table>
+    <!-- Execution Section (The most important part) -->
+    <div style="background: #111827; color: #fff; padding: 30px; border-radius: 12px; margin-top: 40px; box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);">
+        <h3 style="margin: 0 0 15px; font-size: 14px; text-transform: uppercase; letter-spacing: 1px; color: #60a5fa;">⭐ Today's Execution Task</h3>
+        <p style="margin: 0 0 5px; font-size: 18px; font-weight: 600;">🪜 {task.split(':')[0]}</p>
+        <p style="margin: 0; font-size: 14px; color: #9ca3af; line-height: 1.5;">{task}</p>
+    </div>
 
-{bonus_html}
+    <!-- Winner Section -->
+    <div style="text-align: center; margin-top: 40px; padding: 20px; border: 2px dashed #d1d5db; border-radius: 12px;">
+         <h3 style="margin: 0 0 5px; font-size: 14px; text-transform: uppercase; letter-spacing: 1px; color: #059669;">🏆 Best Idea Today</h3>
+         <p style="margin: 0; font-size: 20px; font-weight: 800; color: #111827;">{best_idea['business_name']}</p>
+         <p style="margin: 8px 0 0; font-size: 14px; color: #6b7280;">High potential for immediate revenue in the Nepali market.</p>
+    </div>
 
-<table width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#1a1a2e;margin-top:20px;">
-<tr><td style="padding:30px 20px;text-align:center;">
-  <p style="margin:0;font-size:12px;color:#64748b;">
-    Automated by <strong style="color:#e94560;">Business Automation System</strong><br>
-    Ideas curated from USA, Europe, India, Southeast Asia &amp; AI/SaaS ecosystems<br>
-    <em>New ideas every day at 6:00 AM NPT</em>
-  </p>
-</td></tr></table>
+    <!-- Footer -->
+    <div style="text-align: center; margin-top: 50px; padding-top: 20px; border-top: 1px solid #e5e7eb; color: #9ca3af; font-size: 12px;">
+        <p>Generated by your Ultra-Elite Startup Intelligence System</p>
+    </div>
 
-</body></html>"""
+</div>
 
-
-# ═══════════════════════════════════════════════════════════════════════════
-#  MARKDOWN REPORT
-# ═══════════════════════════════════════════════════════════════════════════
-def build_markdown(main_ideas, bonus_ideas, high_risk, date_str):
-    lines = [f"# 🚀 Daily Startup Ideas — {date_str}\n",
-             "**5 Trending, Tech-Enabled Business Ideas Adapted for Nepal**\n",
-             "> Curated from validated models across USA, Europe, India, SE Asia & AI/SaaS.\n", "---\n"]
-
-    for idx, idea in enumerate(main_ideas, 1):
-        lines.append(f"## 💡 Idea #{idx}: {idea['business_name']}\n")
-        lines.append(f"**Category:** {idea['category']}\n")
-        for field, label in [("what_it_does","What It Does"),("where_working","Where Working"),
-                             ("why_growing","Why Growing"),("nepal_adaptation","Nepal Adaptation")]:
-            lines.append(f"### 🔹 {label}\n{idea[field]}\n")
-        lines.append(f"### 🔹 Cost\n**{idea['startup_cost']}** — {idea.get('cost_estimate','')}\n")
-        lines.append(f"### 🔹 Monetization\n{idea['monetization']}\n")
-        lines.append("### 🔹 30-Day Action Plan\n| Phase | Action |\n|-------|--------|")
-        for s in idea.get("action_plan", []):
-            p = s.split(": ", 1)
-            lines.append(f"| {p[0]} | {p[1] if len(p)>1 else s} |")
-        lines.append("\n---\n")
-
-    if high_risk:
-        lines.append(f"## 🔥 HIGH-RISK: {high_risk['business_name']}\n")
-        lines.append(f"**{high_risk['category']}** | {high_risk['what_it_does']}\n---\n")
-
-    if bonus_ideas:
-        lines.append("## 📩 Bonus Previews (reply for details)\n")
-        for i in bonus_ideas:
-            lines.append(f"- **{i['business_name']}** ({i['category']}) — {i['what_it_does'][:120]}...\n")
-
-    return "\n".join(lines)
+</body>
+</html>"""
 
 
 # ═══════════════════════════════════════════════════════════════════════════
@@ -260,11 +195,18 @@ def send_email(config, subject, html):
     msg["From"] = config["sender_email"]
     msg["To"] = config["recipient_email"]
     msg.attach(MIMEText(html, "html", "utf-8"))
-    with smtplib.SMTP(config["smtp_server"], config["smtp_port"]) as s:
-        s.ehlo(); s.starttls(); s.ehlo()
-        s.login(config["sender_email"], config["sender_password"])
-        s.send_message(msg)
-    log.info("📧 Email sent to %s", config["recipient_email"])
+    
+    try:
+        with smtplib.SMTP(config["smtp_server"], config["smtp_port"]) as s:
+            s.ehlo()
+            s.starttls()
+            s.ehlo()
+            s.login(config["sender_email"], config["sender_password"])
+            s.send_message(msg)
+        log.info("📧 Email sent to %s", config["recipient_email"])
+    except Exception as e:
+        log.error(f"❌ Failed to send email: {e}")
+        raise
 
 
 # ═══════════════════════════════════════════════════════════════════════════
@@ -272,68 +214,44 @@ def send_email(config, subject, html):
 # ═══════════════════════════════════════════════════════════════════════════
 def main():
     log.info("=" * 60)
-    log.info("🚀 Daily Business Ideas Automation — Starting")
+    log.info("🚀 CEO Briefing Automation — Starting")
     log.info("=" * 60)
 
     config = load_json(CONFIG_FILE)
     ideas = load_json(IDEAS_FILE)
-    history = load_json(HISTORY_FILE) if HISTORY_FILE.exists() else {"sent_ids":[],"log":[],"cycle_count":0}
+    history = load_json(HISTORY_FILE) if HISTORY_FILE.exists() else {"sent_ids":[], "log":[]}
 
-    total_r = len([i for i in ideas if not i["is_high_risk"]])
-    total_hr = len([i for i in ideas if i["is_high_risk"]])
-    remaining = total_r - len([s for s in history.get("sent_ids",[]) if any(i["id"]==s and not i["is_high_risk"] for i in ideas)])
-    log.info(f"📊 Database: {total_r} regular + {total_hr} high-risk | {remaining} unsent")
+    # Select 3 Ideas
+    selected_ideas, history = select_ideas(ideas, history, count=3)
+    
+    if not selected_ideas:
+        log.error("❌ No ideas found to send!")
+        return
 
-    main_count = config.get("ideas_per_day", 5)
-    bonus_count = config.get("bonus_preview_count", 3)
-    main_ideas, bonus_ideas, high_risk, history = select_ideas(ideas, history, main_count, bonus_count)
-
-    log.info(f"✅ Selected {len(main_ideas)} main + {len(bonus_ideas)} bonus" + (" + 1 high-risk" if high_risk else ""))
+    log.info(f"✅ Selected 3 ideas: {[i['business_name'] for i in selected_ideas]}")
 
     date_str = datetime.now().strftime("%B %d, %Y")
+    
+    # Build Subject
+    subject = f"🚀 CEO Briefing: Profitable SaaS Opportunities for Nepal — {date_str}"
 
-    # Save bonus ideas to pending_details.json for reply_checker
-    if bonus_ideas:
-        pending = {
-            "date": datetime.now().strftime("%Y-%m-%d"),
-            "date_display": date_str,
-            "ideas": {i["business_name"]: i for i in bonus_ideas},
-        }
-        save_json(PENDING_FILE, pending)
-        log.info(f"💾 {len(bonus_ideas)} bonus ideas saved for reply-on-demand")
+    # Build Content
+    html = build_email(selected_ideas, date_str)
 
-    # Save markdown report
-    if config.get("save_reports", True):
-        rdir = BASE_DIR / config.get("reports_dir", "reports")
-        rdir.mkdir(exist_ok=True)
-        md = build_markdown(main_ideas, bonus_ideas, high_risk, date_str)
-        (rdir / f"daily_ideas_{datetime.now().strftime('%Y-%m-%d')}.md").write_text(md, encoding="utf-8")
-        log.info("💾 Report saved")
+    # Send
+    send_email(config, subject, html)
 
-    # Send email
-    html = build_email(main_ideas, bonus_ideas, high_risk, date_str)
-    send_email(config, f"🚀 Daily Startup Ideas — {date_str}", html)
-
-    # Update history (main ideas + high-risk marked as sent; bonus stays available)
-    for i in main_ideas:
+    # Update History
+    for i in selected_ideas:
         history["sent_ids"].append(i["id"])
-    if high_risk:
-        history["sent_ids"].append(high_risk["id"])
-    # Bonus ideas also marked sent to avoid showing them as main later
-    for i in bonus_ideas:
-        history["sent_ids"].append(i["id"])
-
+    
     history["log"].append({
         "date": datetime.now().strftime("%Y-%m-%d"),
-        "main": [i["business_name"] for i in main_ideas],
-        "bonus": [i["business_name"] for i in bonus_ideas],
-        "high_risk": high_risk["business_name"] if high_risk else None,
+        "ideas": [i["business_name"] for i in selected_ideas]
     })
+    
     save_json(HISTORY_FILE, history)
-
-    log.info("✅ ALL DONE — Full ideas + bonus previews sent!")
-    log.info("=" * 60)
-
+    log.info("✅ CEO Briefing Sent Successfully!")
 
 if __name__ == "__main__":
     try:

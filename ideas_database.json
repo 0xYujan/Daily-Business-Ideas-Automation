@@ -696,5 +696,195 @@
       "Day 21-25: Field test with 50 farmers in Chitwan/Kavre districts",
       "Day 26-30: Partner with 3 agro-vet companies for treatment recommendations"
     ]
+  },
+  {
+    "id": "agent01",
+    "business_name": "SarakariSaathi (GovForm Agent)",
+    "category": "AI Agent",
+    "is_high_risk": false,
+    "what_it_does": "Autonomous AI agent that fills out complex Nepali government forms (Company Reg, Tax, Passport) for users. Upload a photo of Citizenship/PAN, and the agent auto-fills the portal, checks for errors, and alerts you on missing docs.",
+    "where_working": "USA — Harvey (Legal AI), DoNotPay. India — VakilSearch (automation features).",
+    "why_growing": "Navigating Nepal's government portals (OCR, Nagarik App) is confusing. Everyone pays 'Lekhandas' (scribes) ₨500-2000 just to fill forms. An AI agent is cheaper, faster, and error-free.",
+    "nepal_adaptation": "Train on specific Nepali government portal fields. Support Nepali handwriting OCR. Integrate with Nagarik App API if possible. Price: ₨100 per form fill.",
+    "startup_cost": "Low",
+    "cost_estimate": "₨3-5 Lakhs",
+    "monetization": "Pay-per-form fill. Subscription for law firms/consultancies.",
+    "action_plan": [
+      "Map fields for Company Registrar portal",
+      "Build OCR model for Nepali Citizenship card",
+      "Launch simple 'Form Fulfiller' web tool"
+    ],
+    "priority": true
+  },
+  {
+    "id": "agent02",
+    "business_name": "SunChaadi Pro (GoldShop OS)",
+    "category": "Vertical SaaS",
+    "is_high_risk": false,
+    "what_it_does": "Specialized ERP for Nepal's 10,000+ Gold & Silver shops. Auto-updates daily gold rates (FENEGOSIDA), calculates making charges, manages inventory by weight/purity, and generates VAT-compliant invoices.",
+    "where_working": "India — Aurus, Sequretek (Jewelry ERPs). Middle East — various Gold ERPs.",
+    "why_growing": "Gold shops handle millions in cash/inventory but use paper ledgers. Manual calculation errors cost huge money when gold rates change daily. Tax compliance is tightening.",
+    "nepal_adaptation": "Live integration with Nepal Gold Silver Dealers Association rates. Nepali UI. Support Tola/Lal/Gram units. Safety features (customer KYC for high-value buys).",
+    "startup_cost": "Medium",
+    "cost_estimate": "₨5-10 Lakhs",
+    "monetization": "SaaS Subscription (₨2000/mo). Hardware bundle (Barcode scanner + Printer).",
+    "action_plan": [
+      "Interview 5 Gold Shop owners in New Road",
+      "Build daily rate scraper",
+      "Develop inventory tracking by weight (Tola/Lal)"
+    ],
+    "priority": true
+  },
+  {
+    "id": "agent03",
+    "business_name": "KanoonDraft AI",
+    "category": "AI Agent",
+    "is_high_risk": false,
+    "what_it_does": "Legal document drafting agent. Describe a deal ('I am renting my house in Baneshwor to Ram for 2 years at 30k/mo'), and it drafts a legally valid agreement in Nepali/English, ready to print.",
+    "where_working": "USA — LegalZoom, Ironclad. India — LegalKart.",
+    "why_growing": "Lawyers charge ₨5K+ for simple agreements. Most people use outdated templates that offer no protection. AI can do this instantly.",
+    "nepal_adaptation": "Templates for House Rent, Land Sale, Vehicle Sale, Employee Contract. align with Muluki Dewani Samhita (Civil Code).",
+    "startup_cost": "Low",
+    "cost_estimate": "₨2-4 Lakhs",
+    "monetization": "Per-document fee (₨200-500). Monthly for real estate agents.",
+    "action_plan": [
+      "Collect 50 valid Nepali legal contract templates",
+      "Fine-tune LLM on Nepali legal terminology",
+      "Launch web generator"
+    ],
+    "priority": true
+  },
+  {
+    "id": "agent04",
+    "business_name": "RouteMaster Kathmandu",
+    "category": "Logistics AI",
+    "is_high_risk": false,
+    "what_it_does": "AI dispatch agent for local delivery companies. Takes a list of 50 delivery addresses, sorts them by location (using landmarks, not just rough GPS), assigns them to riders, and pushes optimized routes to their phone.",
+    "where_working": "India — Locus.sh, FarEye. Southeast Asia — NinjaVan methods.",
+    "why_growing": "Kathmandu addresses are vague ('Near Pipal Bot'). Google Maps fails. Delivery efficiency acts as the margin maker for logistics.",
+    "nepal_adaptation": "Build 'Landmark-based' routing engine. Interpret 'Gallis'. Integration with Pathao/Indrive API (if open) or standalone rider app.",
+    "startup_cost": "Medium",
+    "cost_estimate": "₨5-12 Lakhs",
+    "monetization": "Per-delivery optimization fee. Monthly SaaS for courier companies.",
+    "action_plan": [
+      "Partner with one local courier company",
+      "Build landmark database for Kathmandu",
+      "Develop rider route app"
+    ],
+    "priority": true
+  },
+  {
+    "id": "agent05",
+    "business_name": "ManpowerMatch Agent",
+    "category": "AI Agent",
+    "is_high_risk": false,
+    "what_it_does": "Autonomous recruiter for Manpower agencies. Scans thousands of worker passports/bios, matches them against 'Demand Letters' from Qatar/Dubai, and auto-generates the submission file.",
+    "where_working": "Global — Hired, various ATS AI tools.",
+    "why_growing": "Nepal sends 2000+ workers daily. Agencies manage data manually. Speed to submit = Winning the specific demand quota.",
+    "nepal_adaptation": "Parse Nepali passports and CVs. Match with Gulf job codes (Mason, Driver, Security). Auto-format for Department of Foreign Employment upload.",
+    "startup_cost": "Low",
+    "cost_estimate": "₨3-6 Lakhs",
+    "monetization": "Subscription per agency (₨5000/mo). Success fee per placed worker.",
+    "action_plan": [
+      "Get sample Demand Letter and Worker CVs",
+      "Build matching algorithm",
+      "Pilot with 2 manpower agencies in Gongabu"
+    ],
+    "priority": true
+  },
+  {
+    "id": "vsaas01",
+    "business_name": "ClinicFlow Nepal",
+    "category": "Vertical SaaS",
+    "is_high_risk": false,
+    "what_it_does": "Practice management software for small Poly-clinics and Dental offices. managing appointments, patient history, billing, and pharmacy inventory in one place.",
+    "where_working": "India — Practo Ray, DentalTap.",
+    "why_growing": "Thousands of private clinics in Nepal run on paper. Patients lose prescriptions. Inventory theft in pharmacy is common.",
+    "nepal_adaptation": "Offline-first. Nepali date support. Visual teeth chart for dentists. SMS reminders for follow-ups.",
+    "startup_cost": "Medium",
+    "cost_estimate": "₨4-8 Lakhs",
+    "monetization": "SaaS Subscription (₨1500-3000/mo).",
+    "action_plan": [
+      "Shadow a dentist for 2 days",
+      "Build appointment + patient record core",
+      "Pilot with 5 clinics"
+    ],
+    "priority": true
+  },
+  {
+    "id": "vsaas02",
+    "business_name": "GymMate Nepal",
+    "category": "Vertical SaaS",
+    "is_high_risk": false,
+    "what_it_does": "Gym management software. Tracks member expiry, auto-blocks entry (turnstile integration), manages diet plans, and sells supplements.",
+    "where_working": "Global — Glofox, Mindbody.",
+    "why_growing": "Fitness boom in Nepal. Gym owners lose 20% revenue to 'expired members' sneaking in. Manual notebook tracking is failing.",
+    "nepal_adaptation": "QR code entry system. Direct eSewa link for renewals. Diet charts with Nepali foods (Dal Bhat, Chana).",
+    "startup_cost": "Low",
+    "cost_estimate": "₨3-6 Lakhs",
+    "monetization": "Monthly SaaS (₨2000). Turnstile hardware Commission.",
+    "action_plan": [
+      "Build member database with expiry alerts",
+      "Test QR entry system",
+      "Sell to 10 local gyms"
+    ],
+    "priority": true
+  },
+  {
+    "id": "agent06",
+    "business_name": "SocialSelling Agent",
+    "category": "AI Agent",
+    "is_high_risk": false,
+    "what_it_does": "AI that monitors Facebook comments/DMs on a shop's page. If someone asks 'Price?' or 'Location?', it instantly DMs them the details + a 'Buy Now' link. 24/7 sales closer.",
+    "where_working": "Global — ManyChat AI.",
+    "why_growing": "Nepali F-commerce (Facebook Commerce) is huge. Sellers lose sales because they sleep or reply late. Instant DM increases conversion by 50%.",
+    "nepal_adaptation": "Understand 'Pp', 'Price kati ho', 'Location?'. Reply in Roman Nepali/English mix. Integration with Fonepay links.",
+    "startup_cost": "Low",
+    "cost_estimate": "₨2-4 Lakhs",
+    "monetization": "Monthly subscription (₨1000). Commission on sales tracked.",
+    "action_plan": [
+      "Build Facebook Graph API comment monitor",
+      "Train intent recognition for 'Buy' signals",
+      "Launch free trial for clothing stores"
+    ],
+    "priority": true
+  },
+  {
+    "id": "vsaas03",
+    "business_name": "PartyPalace OS",
+    "category": "Vertical SaaS",
+    "is_high_risk": false,
+    "what_it_does": "Booking and catering management for Nepal's Party Palaces. Calendar to prevent double booking, menu planner, staff roster, and cost estimator per plate.",
+    "where_working": "India — Event management ERPs.",
+    "why_growing": "Wedding season is chaotic. Double bookings happen. Food waste calculation is manual. High ticket value means they can pay for software.",
+    "nepal_adaptation": "Bikram Sambat Wedding Calendar integration. Menu calculator (e.g., 'Mutton Curry for 500 people = X kg meat').",
+    "startup_cost": "Low",
+    "cost_estimate": "₨3-6 Lakhs",
+    "monetization": "Annual license (₨15,000) or Monthly (₨1500).",
+    "action_plan": [
+      "Map top 50 party palaces in Ring Road",
+      "Build visual booking calendar",
+      "Create catering calculator"
+    ],
+    "priority": true
+  },
+  {
+    "id": "agent07",
+    "business_name": "TenderHunter AI",
+    "category": "AI Agent",
+    "is_high_risk": false,
+    "what_it_does": "Scrapes all Nepali newspaper daily tender notices (Gorkhapatra, Kantipur) and e-GP portal. Matches them to a contractor's profile and drafts the bid cover letter.",
+    "where_working": "Global — Bid/Tender scrapers.",
+    "why_growing": "Contractors miss tenders buried in newspapers. Manual checking is tedious. Preparation of bid documents is repetitive.",
+    "nepal_adaptation": "OCR for newspaper scans (Gorkhapatra/Kantipur). Keyword matching 'Road', 'building', 'IT'. Auto-format bid bond request letter for banks.",
+    "startup_cost": "Medium",
+    "cost_estimate": "₨4-8 Lakhs",
+    "monetization": "Monthly Alert Subscription (₨2000). Bid drafting fee.",
+    "action_plan": [
+      "Build scraper for Bolpatra/e-GP",
+      "Develop OCR for newspaper notices",
+      "Pilot with 5 construction companies"
+    ],
+    "priority": true
   }
 ]

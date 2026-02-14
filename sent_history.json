@@ -1,1 +1,54 @@
-﻿{"sent_ids": [], "log": [], "cycle_count": 0}
+{
+  "sent_ids": [
+    "ai04",
+    "ai03",
+    "dm03",
+    "ed04",
+    "ed03",
+    "hr01",
+    "mp03",
+    "mp01",
+    "dm01",
+    "st01",
+    "crm01",
+    "hr06",
+    "agent07",
+    "vsaas02",
+    "agent01"
+  ],
+  "log": [
+    {
+      "date": "2026-02-14",
+      "main": [
+        "ChatLocal AI",
+        "BrandSpark AI",
+        "RepostAI Nepal",
+        "PadhaiMate",
+        "VidyaBot"
+      ],
+      "bonus": [
+        "RentKaro Nepal",
+        "KaamGarau",
+        "PostMaster Nepal"
+      ],
+      "high_risk": "BolBot Nepal"
+    },
+    {
+      "date": "2026-02-14",
+      "ideas": [
+        "ScholarPath Nepal",
+        "BizChat Nepal",
+        "AgriSense Nepal"
+      ]
+    },
+    {
+      "date": "2026-02-14",
+      "ideas": [
+        "TenderHunter AI",
+        "GymMate Nepal",
+        "SarakariSaathi (GovForm Agent)"
+      ]
+    }
+  ],
+  "cycle_count": 0
+}

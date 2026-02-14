@@ -2,6 +2,26 @@
   "date": "2026-02-14",
   "date_display": "February 14, 2026",
   "ideas": {
+    "RentKaro Nepal": {
+      "id": "mp03",
+      "business_name": "RentKaro Nepal",
+      "category": "Marketplace",
+      "is_high_risk": false,
+      "what_it_does": "Equipment and asset rental marketplace. Rent anything from cameras and projectors to power tools, party supplies, trekking gear, and construction equipment — by the day or week. Includes verification, insurance, and secure payments.",
+      "where_working": "USA — Fat Llama ($14M raised), Neighbor. India — RentMojo ($100M+ raised), Furlenco. Europe — Grover (Germany, $1B+ valuation).",
+      "why_growing": "Buying expensive equipment for one-time use is wasteful. DSLR cameras cost ₨100K+ but are needed only for events. Students need projectors/speakers for presentations. Construction contractors need specialized tools for specific jobs. Sharing economy mindset is growing globally.",
+      "nepal_adaptation": "Start with high-demand categories: cameras/photography gear, projectors, trekking equipment, party/event supplies. Target Kathmandu college students + event organizers + trekking tourists. Digital deposit via eSewa (refundable). Verification: citizenship + social media ID. Neighborhood pickup points to reduce logistics cost.",
+      "startup_cost": "Low",
+      "cost_estimate": "₨3-6 Lakhs",
+      "monetization": "Commission per rental (15-20%). Renter verification fee. Optional insurance add-on. Featured listings for commercial renters.",
+      "action_plan": [
+        "Day 1-7: Build rental listing platform with availability calendar",
+        "Day 8-14: Recruit 50 initial owners (cameras, projectors, trekking gear)",
+        "Day 15-20: Implement deposit and payment system via eSewa",
+        "Day 21-25: Launch in Kathmandu, target college event season",
+        "Day 26-30: Add renter/owner rating system and rental insurance option"
+      ]
+    },
     "KaamGarau": {
       "id": "mp01",
       "business_name": "KaamGarau",
@@ -22,44 +42,24 @@
         "Day 26-30: Collect 50+ customer reviews, iterate on matching algorithm"
       ]
     },
-    "SkillBridge Nepal": {
-      "id": "ed01",
-      "business_name": "SkillBridge Nepal",
-      "category": "EdTech",
-      "is_high_risk": false,
-      "what_it_does": "Micro-certification platform offering 2-4 week practical skill courses in high-demand areas: digital marketing, Excel/data analysis, graphic design, basic coding, video editing. Each course ends with a verifiable digital certificate and portfolio project.",
-      "where_working": "India — Internshala Trainings (10M+ learners). USA — Coursera, Skillshare. Southeast Asia — Cakap (Indonesia), Refocus (Philippines).",
-      "why_growing": "Nepal's job market increasingly demands digital skills not taught in colleges. Short, focused courses outperform 4-year degrees for skill acquisition. Employers value portfolio projects over certificates. 300K+ Nepali students graduate annually needing employable skills.",
-      "nepal_adaptation": "Courses in Nepali with English technical terms. Focus on skills demanded in Nepal job market: Excel, Canva, social media management, WordPress. Include real client projects (partner with local businesses). Verifiable blockchain-like certificates. Price: ₨999-2999 per course (vs ₨15K+ for traditional training).",
-      "startup_cost": "Low",
-      "cost_estimate": "₨2-5 Lakhs",
-      "monetization": "Per-course fees. Employer hiring partnerships. Subscription for all-access. Corporate training packages.",
-      "action_plan": [
-        "Day 1-7: Design 3 initial courses: Digital Marketing, Excel, Canva",
-        "Day 8-14: Record video lessons and create practical assignments",
-        "Day 15-20: Build simple LMS (learning management system) web app",
-        "Day 21-25: Beta launch with 50 students at 50% discount",
-        "Day 26-30: Collect testimonials, add certificate verification system"
-      ]
-    },
-    "ReviewRaksha": {
-      "id": "dm02",
-      "business_name": "ReviewRaksha",
+    "PostMaster Nepal": {
+      "id": "dm01",
+      "business_name": "PostMaster Nepal",
       "category": "Digital Marketing",
       "is_high_risk": false,
-      "what_it_does": "Online reputation and review management platform for Nepali businesses. Monitors Google, Facebook, TripAdvisor, and Daraz reviews in one dashboard. Sends instant alerts for new reviews, generates AI response suggestions, and helps businesses collect more positive reviews via automated SMS/WhatsApp follow-ups.",
-      "where_working": "USA — Birdeye ($100M+ revenue), Podium ($3B valuation). India — Zceppa. Europe — Trustpilot (Denmark, $1B+ valuation).",
-      "why_growing": "Google reviews directly impact local business visibility — 88% of consumers trust online reviews. Nepal's restaurants, hotels, and clinics are getting reviewed but rarely respond. Negative reviews left unanswered cost businesses 30% of potential customers. No Nepal-focused review tool exists.",
-      "nepal_adaptation": "Monitor Nepal-relevant platforms: Google Maps, Facebook Pages, TripAdvisor, Daraz seller reviews. AI response templates in Nepali. Automated review request via SMS after service (Sparrow SMS API). Start with Thamel restaurants/hotels and medical clinics. Price: ₨699-1999/month.",
+      "what_it_does": "Social media scheduling and analytics platform built for Nepal's market. Schedule posts across Facebook, Instagram, TikTok, and YouTube. Get analytics in Nepali, best-posting-time suggestions using Nepal-specific data, and AI caption generation in Nepali/English.",
+      "where_working": "USA — Buffer ($20M+ ARR), Hootsuite, Later. India — Statusbrew. Southeast Asia — Promo Republic.",
+      "why_growing": "5,000+ businesses and agencies in Nepal actively manage social media but use no scheduling tools. Buffer/Hootsuite cost $15-100/month (expensive for Nepal). Nepal-specific posting time analytics don't exist. TikTok Nepal growing at 200% year-over-year needs management tools.",
+      "nepal_adaptation": "Nepali language captions and hashtag suggestions. Nepal timezone best-posting-time data. Support Nepali festivals/events calendar for content planning (Dashain, Tihar, Holi). TikTok Nepal analytics (competitors lack this). Price: ₨499-1499/month vs $15-100 for international tools.",
       "startup_cost": "Low",
-      "cost_estimate": "₨2-5 Lakhs",
-      "monetization": "Monthly SaaS subscription. Premium: multi-location, competitor monitoring. Review generation campaigns as add-on service.",
+      "cost_estimate": "₨3-6 Lakhs",
+      "monetization": "Monthly subscription tiered by accounts/posts. Agency tier with client management. Add-on: AI content generation credits.",
       "action_plan": [
-        "Day 1-7: Build review aggregation from Google Maps and Facebook APIs",
-        "Day 8-14: Create unified dashboard with alert notifications",
-        "Day 15-20: Add AI-powered response suggestion engine",
-        "Day 21-25: Build automated review request system (SMS after visit)",
-        "Day 26-30: Pilot with 10 Thamel restaurants and 5 clinics"
+        "Day 1-7: Build scheduling engine with Facebook and Instagram API integration",
+        "Day 8-14: Add TikTok scheduling (using their Content Posting API)",
+        "Day 15-20: Build analytics dashboard with Nepal posting-time insights",
+        "Day 21-25: Add AI caption generator with Nepali language support",
+        "Day 26-30: Offer free 1-month trial to 30 digital marketing agencies"
       ]
     }
   }
