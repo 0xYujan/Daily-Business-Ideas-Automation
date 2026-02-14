@@ -61,7 +61,21 @@ schtasks /Query /TN "DailyBusinessIdeas_Evening"
 
 ---
 
-## 📂 Project Structure
+### 5. Deploy to VPS (Linux)
+If you want to run this 24/7 on a cloud server (DigitalOcean, AWS, Linode):
+
+1. **Copy Files**:
+   ```bash
+   scp setup_vps.sh config.json root@YOUR_VPS_IP:~/
+   ```
+2. **Run Setup**:
+   ```bash
+   ssh root@YOUR_VPS_IP
+   chmod +x setup_vps.sh
+   ./setup_vps.sh
+   ```
+   *This script installs Python, clones the repo, and sets up the 6AM/5PM cron jobs automatically.*
+
 - `daily_ideas_sender.py`: Main logic for selecting ideas and sending the email.
 - `update_database.py`: Utility to merge new ideas from `fresh_ideas.json`.
 - `ideas_database.json`: The core database covering 40+ validated business ideas.
