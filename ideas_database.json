@@ -1,0 +1,700 @@
+[
+  {
+    "id": "ai01",
+    "business_name": "ResumeKraft AI",
+    "category": "AI Tools",
+    "is_high_risk": false,
+    "what_it_does": "AI-powered resume builder that analyzes job postings from MeroJob, JobsNepal & international platforms, then generates tailored resumes with ATS-optimized formatting. Includes cover letter generation and interview prep tips.",
+    "where_working": "USA — Teal, Kickresume, Resume.io (millions of users). India — resumod.co gaining traction among IT graduates.",
+    "why_growing": "80% of resumes are rejected by ATS before a human sees them. Nepali job seekers applying internationally need ATS-friendly formats. AI APIs make personalized generation affordable at scale.",
+    "nepal_adaptation": "Integrate with MeroJob & JobsNepal job listings for auto-tailoring. Support Nepali CV format (with photo/DOB) plus international format. Target 200K+ annual Nepali graduates and Gulf/overseas job seekers. Price at ₨199-699/month. Partner with manpower agencies for B2B distribution.",
+    "startup_cost": "Low",
+    "cost_estimate": "₨2-4 Lakhs",
+    "monetization": "Freemium (1 free resume) → paid plans. B2B licensing to manpower agencies. Premium templates as one-time purchases.",
+    "action_plan": [
+      "Day 1-5: Build MVP with OpenAI API + resume templates",
+      "Day 6-10: Add MeroJob job listing scraper for auto-tailoring",
+      "Day 11-15: Beta test with 30 job seekers from Facebook groups",
+      "Day 16-20: Add cover letter generator and ATS score checker",
+      "Day 21-25: Integrate eSewa/Khalti payments",
+      "Day 26-30: Launch campaign on TikTok + LinkedIn Nepal"
+    ]
+  },
+  {
+    "id": "ai02",
+    "business_name": "TranslateNP",
+    "category": "AI Tools",
+    "is_high_risk": false,
+    "what_it_does": "AI document translation platform specialized for Nepali ↔ English. Handles legal documents, academic certificates, business contracts, and government forms with domain-specific accuracy far beyond Google Translate.",
+    "where_working": "USA — DeepL ($100M+ revenue). India — Devnagri (raised $1M+). Southeast Asia — Flitto (Korea, expanded regionally).",
+    "why_growing": "Nepal's foreign employment sector processes 500K+ documents/year needing translation. Students need transcript translations for abroad studies. Government digitization creating demand for Nepali NLP tools.",
+    "nepal_adaptation": "Train on Nepal-specific document types: citizenship, academic transcripts, land ownership, legal contracts. Partner with embassies and consultancies for B2B. Offer certified translation with human review tier. Price 70% below traditional translation agencies (₨200-500 per page vs ₨800-1500).",
+    "startup_cost": "Medium",
+    "cost_estimate": "₨5-10 Lakhs",
+    "monetization": "Per-page pricing for individuals. Monthly subscription for agencies/consultancies. API access for integration partners.",
+    "action_plan": [
+      "Day 1-7: Collect 500+ sample Nepali documents across categories for training",
+      "Day 8-14: Build translation engine using fine-tuned AI models",
+      "Day 15-20: Test accuracy with professional translators, iterate",
+      "Day 21-25: Build simple web interface with document upload",
+      "Day 26-30: Pilot with 3 education consultancies in Kathmandu"
+    ]
+  },
+  {
+    "id": "ai03",
+    "business_name": "BrandSpark AI",
+    "category": "AI Tools",
+    "is_high_risk": false,
+    "what_it_does": "AI-powered logo, brand kit, and social media design generator. Input your business name and industry, get a complete brand identity: logo variations, color palette, business cards, social media templates, and letterhead — all in minutes.",
+    "where_working": "USA — Looka ($20M+ revenue), Brandmark.io. India — Designhill AI. Europe — Tailor Brands (Israel, $70M raised).",
+    "why_growing": "50,000+ new businesses register in Nepal annually. Professional branding typically costs ₨20K-100K from agencies. AI can generate quality brand assets for 1/10th the cost. SMBs increasingly need social media presence with consistent branding.",
+    "nepal_adaptation": "Pre-built templates for Nepali business types: restaurants, travel agencies, coaching centers, retail shops. Support Devanagari script in logos. Include Nepal-specific social media sizes (Facebook cover, TikTok, Viber). Local pricing: ₨499-1999 per brand kit vs ₨20K+ from agencies.",
+    "startup_cost": "Low",
+    "cost_estimate": "₨3-6 Lakhs",
+    "monetization": "One-time brand kit purchase. Subscription for ongoing social media templates. White-label for design agencies.",
+    "action_plan": [
+      "Day 1-5: Build logo generation pipeline using Stable Diffusion + templates",
+      "Day 6-10: Create brand kit bundler (colors, fonts, mockups)",
+      "Day 11-15: Add social media template generator",
+      "Day 16-20: Test with 20 small business owners for feedback",
+      "Day 21-25: Add payment gateway and download system",
+      "Day 26-30: Launch on Facebook business groups + digital marketing communities"
+    ]
+  },
+  {
+    "id": "ai04",
+    "business_name": "ChatLocal AI",
+    "category": "AI Tools",
+    "is_high_risk": false,
+    "what_it_does": "No-code AI chatbot builder for Nepali businesses. Owners upload their menu/price list/FAQ, and get an AI chatbot that answers customer questions on Facebook Messenger, Instagram DM, and WhatsApp — in Nepali and English.",
+    "where_working": "USA — Chatfuel, ManyChat (10M+ bots created). India — Yellow.ai, Verloop.io. Southeast Asia — AiChat (Singapore).",
+    "why_growing": "Nepali businesses spend 3+ hours/day answering repetitive customer queries. Facebook Messenger is the #1 customer contact channel in Nepal. No existing chatbot solution supports Nepali language well. AI chatbots reduce response time from hours to seconds.",
+    "nepal_adaptation": "Deep Nepali language support with colloquial understanding. Pre-built templates for restaurants (menu inquiries, reservations), shops (price checks, stock), services (appointment booking). One-click Facebook Page integration. Pricing: ₨799-2499/month (vs $50-200 for international tools).",
+    "startup_cost": "Low",
+    "cost_estimate": "₨3-5 Lakhs",
+    "monetization": "Monthly SaaS subscription tiered by message volume. Setup fee for custom training. Agency reseller program.",
+    "action_plan": [
+      "Day 1-5: Build chatbot engine using open-source LLM + RAG pipeline",
+      "Day 6-10: Create Facebook Messenger integration",
+      "Day 11-15: Build no-code dashboard for business owners to upload their data",
+      "Day 16-20: Pilot with 5 restaurants in Kathmandu",
+      "Day 21-25: Add Instagram DM and WhatsApp support",
+      "Day 26-30: Create demo videos and launch marketing campaign"
+    ]
+  },
+  {
+    "id": "ai05",
+    "business_name": "PriceWatch Nepal",
+    "category": "AI Tools",
+    "is_high_risk": false,
+    "what_it_does": "AI-powered price comparison and deal alert platform for Nepal. Scrapes prices from Daraz, SastoDeal, HamroBazar, and local retailers. Sends alerts when prices drop. Includes price history charts and best-time-to-buy predictions.",
+    "where_working": "USA — CamelCamelCamel, Honey (acquired by PayPal for $4B). India — PriceBefore, BuyHatke (millions of users). Europe — Idealo (Germany).",
+    "why_growing": "Nepali online shoppers have no way to compare prices across platforms. Daraz alone has 5M+ monthly visitors from Nepal. Price manipulation during sales events is common — consumers want transparency. Affiliate commission model is highly profitable.",
+    "nepal_adaptation": "Focus on Daraz Nepal, SastoDeal, HamroBazar, and Facebook marketplace groups. Add Nepali language alerts via SMS and Viber. Include offline retail price comparisons for electronics (New Road, Tamrakar Complex prices). Mobile-first PWA design.",
+    "startup_cost": "Low",
+    "cost_estimate": "₨2-4 Lakhs",
+    "monetization": "Affiliate commissions from e-commerce platforms (5-15% per sale). Display advertising. Premium features (advanced alerts, API access for resellers).",
+    "action_plan": [
+      "Day 1-7: Build web scrapers for Daraz and SastoDeal product pages",
+      "Day 8-14: Create price tracking database and comparison engine",
+      "Day 15-20: Build mobile-friendly web app with search and alerts",
+      "Day 21-25: Add Viber/SMS notifications for price drop alerts",
+      "Day 26-30: Launch with top 1000 products, promote on tech Facebook groups"
+    ]
+  },
+  {
+    "id": "saas01",
+    "business_name": "BillKhata",
+    "category": "SaaS Platform",
+    "is_high_risk": false,
+    "what_it_does": "Digital khata (ledger) and invoicing SaaS for Nepali small businesses. Replaces paper ledgers with a mobile-first app that tracks sales, expenses, customer credit (udhar), generates GST-ready invoices, and provides simple financial reports.",
+    "where_working": "India — Khatabook ($300M valuation), OkCredit ($67M raised). Southeast Asia — BukuWarung (Indonesia, $60M raised). Africa — Wave (Senegal).",
+    "why_growing": "95% of Nepal's 800K+ small businesses still use paper khatas. Nepal's new digital tax compliance requirements are pushing SMBs online. Mobile phone penetration is 90%+ even in rural areas. The Indian Khatabook model proved this works in South Asian markets.",
+    "nepal_adaptation": "Full Nepali language UI with Devanagari numeral support. Nepal tax/VAT compliant invoice format. Offline-first with sync when connected (critical for rural Nepal). QR-based payment integration with eSewa/Khalti. Start with Kathmandu Valley wholesale markets (Asan, Kalimati). Pricing: Free basic tier, ₨299-999/mo for premium.",
+    "startup_cost": "Medium",
+    "cost_estimate": "₨5-10 Lakhs",
+    "monetization": "Freemium SaaS subscription. Premium features: multi-user, inventory, reports. Financial product referrals (business loans, insurance).",
+    "action_plan": [
+      "Day 1-7: Build core ledger and credit tracking (mobile-first PWA)",
+      "Day 8-14: Add invoice generation with Nepal tax format",
+      "Day 15-18: Build offline-first sync capability",
+      "Day 19-24: Pilot with 15 shopkeepers in Asan/New Road area",
+      "Day 25-30: Iterate based on feedback, add eSewa QR payment tracking"
+    ]
+  },
+  {
+    "id": "saas02",
+    "business_name": "ClassTrack",
+    "category": "SaaS Platform",
+    "is_high_risk": false,
+    "what_it_does": "All-in-one school and coaching center management SaaS. Handles student enrollment, attendance tracking, fee collection, exam results, parent communication (SMS/Viber), teacher scheduling, and basic accounting — all from one dashboard.",
+    "where_working": "India — Teachmint ($78M raised), Classplus ($70M raised). Africa — Zeraki (Kenya). Southeast Asia — Manabie.",
+    "why_growing": "Nepal has 35,000+ schools and 10,000+ coaching/tuition centers, mostly managed with Excel or paper. New government push to digitize education records. Parents increasingly demand digital communication and progress tracking. Fee collection is a massive pain point — digital reduces defaults by 30%.",
+    "nepal_adaptation": "Nepali language interface with Bikram Sambat calendar support. SMS via Sparrow SMS API for parent communication. eSewa/Khalti integration for online fee payment. Nepal education board grade system built-in. Start with private schools and coaching centers in Kathmandu, Chitwan, Pokhara. Price: ₨500-3000/month per institution.",
+    "startup_cost": "Medium",
+    "cost_estimate": "₨5-12 Lakhs",
+    "monetization": "Monthly SaaS per institution (tiered by students). Transaction fee on digital fee payments. SMS charges pass-through.",
+    "action_plan": [
+      "Day 1-7: Build core: student database, attendance, fee tracking",
+      "Day 8-14: Add parent communication module (SMS + Viber notification)",
+      "Day 15-20: Create fee payment integration with eSewa/Khalti",
+      "Day 21-25: Pilot with 5 coaching centers in Kathmandu",
+      "Day 26-30: Add exam result management and report card generator"
+    ]
+  },
+  {
+    "id": "saas03",
+    "business_name": "StaySync",
+    "category": "SaaS Platform",
+    "is_high_risk": false,
+    "what_it_does": "Property management SaaS for rental property owners and hostels in Nepal. Manages tenant records, rent collection with automated reminders, maintenance requests, lease agreements, and occupancy tracking. Think of it as a digital landlord assistant.",
+    "where_working": "USA — Buildium, AppFolio ($2B+ valuation). India — NoBroker ($1B+ valuation), RentMojo. Southeast Asia — Ohmyhome (Singapore).",
+    "why_growing": "Kathmandu Valley alone has 200K+ rental units with zero digital management. Landlords manage everything via phone calls and paper receipts. Tenant disputes over payments are common due to lack of records. Growing hostel/co-living market near colleges needs occupancy management.",
+    "nepal_adaptation": "Nepali rental agreement templates with legal compliance. Rent reminder via SMS/Viber in Nepali. eSewa/Khalti rent payment with automatic receipt generation. Tenant verification integration. Start with hostels near TU, KU campuses and apartment buildings in Kathmandu. Price: ₨199-799/month per property.",
+    "startup_cost": "Low",
+    "cost_estimate": "₨3-6 Lakhs",
+    "monetization": "Monthly subscription per property/unit count. Transaction fee on digital rent payments. Premium: maintenance tracking, financial reports.",
+    "action_plan": [
+      "Day 1-5: Build tenant database and rent tracking core",
+      "Day 6-10: Add automated rent reminders via SMS",
+      "Day 11-15: Create digital lease agreement generator",
+      "Day 16-22: Pilot with 10 landlords/hostels near TU campus",
+      "Day 23-27: Add eSewa rent payment and receipt system",
+      "Day 28-30: Launch marketing on real estate Facebook groups"
+    ]
+  },
+  {
+    "id": "saas04",
+    "business_name": "EventNP",
+    "category": "SaaS Platform",
+    "is_high_risk": false,
+    "what_it_does": "Event management and ticketing SaaS for Nepal. Organizers create event pages, sell tickets online, manage attendee check-in via QR codes, and get real-time analytics. Includes tools for weddings, concerts, conferences, and workshops.",
+    "where_working": "USA — Eventbrite ($3B+ revenue), Luma. India — Insider.in (acquired by PayTM), Explara. Southeast Asia — Peatix (Japan/Singapore).",
+    "why_growing": "Nepal's event industry is booming: concerts, tech meetups, marathons, workshops. No proper online ticketing system exists locally — most use Google Forms + manual payment. Digital check-in eliminates fake tickets. Organizers need data on attendees for sponsors.",
+    "nepal_adaptation": "Nepali language event pages. eSewa/Khalti/Fonepay payment integration for ticket purchases. Free tier for community events; paid for commercial events. QR code check-in that works offline. Start with Kathmandu tech meetups, concerts, and marathon events. Commission: 3-5% per ticket.",
+    "startup_cost": "Low",
+    "cost_estimate": "₨3-5 Lakhs",
+    "monetization": "Commission per ticket sold (3-5%). Premium organizer tools (custom branding, analytics). Sponsored event promotions.",
+    "action_plan": [
+      "Day 1-7: Build event page creator and ticket purchase flow",
+      "Day 8-14: Integrate eSewa/Khalti payment gateway",
+      "Day 15-20: Build QR code ticket system and check-in app",
+      "Day 21-25: Partner with 5 upcoming Kathmandu events for free pilot",
+      "Day 26-30: Launch and promote through event organizer networks"
+    ]
+  },
+  {
+    "id": "saas05",
+    "business_name": "HireLocal",
+    "category": "SaaS Platform",
+    "is_high_risk": false,
+    "what_it_does": "Simplified HR and payroll SaaS for Nepali SMBs (5-100 employees). Handles attendance tracking via phone GPS, salary calculation with Nepal tax rules (SSF, TDS), leave management, and digital payslips — replacing Excel spreadsheets.",
+    "where_working": "India — Zoho People, GreytHR (3M+ employees managed). Southeast Asia — Swingvy (Malaysia). Africa — Bento (Nigeria).",
+    "why_growing": "Nepal's Social Security Fund (SSF) compliance requires digital employee records. SMBs waste 15+ hours/month on manual payroll. Employee disputes from calculation errors are common. 50K+ registered companies with 5-100 employees have no HR software.",
+    "nepal_adaptation": "Nepal SSF contribution auto-calculation. TDS (Tax Deducted at Source) computation per Nepal tax slabs. Nepali calendar leave tracking (Dashain, Tihar, public holidays). Attendance via mobile GPS check-in. Start with IT companies and NGOs in Kathmandu. Price: ₨50-100/employee/month.",
+    "startup_cost": "Medium",
+    "cost_estimate": "₨5-10 Lakhs",
+    "monetization": "Per-employee monthly pricing. Premium modules: recruitment, performance review. Payroll processing service add-on.",
+    "action_plan": [
+      "Day 1-7: Build employee database and attendance tracker (GPS check-in)",
+      "Day 8-14: Implement Nepal payroll calculator (SSF, TDS, overtime)",
+      "Day 15-20: Add leave management with Nepal public holidays",
+      "Day 21-25: Pilot with 5 SMBs/IT companies in Kathmandu",
+      "Day 26-30: Add digital payslip generation and employee self-service portal"
+    ]
+  },
+  {
+    "id": "ed01",
+    "business_name": "SkillBridge Nepal",
+    "category": "EdTech",
+    "is_high_risk": false,
+    "what_it_does": "Micro-certification platform offering 2-4 week practical skill courses in high-demand areas: digital marketing, Excel/data analysis, graphic design, basic coding, video editing. Each course ends with a verifiable digital certificate and portfolio project.",
+    "where_working": "India — Internshala Trainings (10M+ learners). USA — Coursera, Skillshare. Southeast Asia — Cakap (Indonesia), Refocus (Philippines).",
+    "why_growing": "Nepal's job market increasingly demands digital skills not taught in colleges. Short, focused courses outperform 4-year degrees for skill acquisition. Employers value portfolio projects over certificates. 300K+ Nepali students graduate annually needing employable skills.",
+    "nepal_adaptation": "Courses in Nepali with English technical terms. Focus on skills demanded in Nepal job market: Excel, Canva, social media management, WordPress. Include real client projects (partner with local businesses). Verifiable blockchain-like certificates. Price: ₨999-2999 per course (vs ₨15K+ for traditional training).",
+    "startup_cost": "Low",
+    "cost_estimate": "₨2-5 Lakhs",
+    "monetization": "Per-course fees. Employer hiring partnerships. Subscription for all-access. Corporate training packages.",
+    "action_plan": [
+      "Day 1-7: Design 3 initial courses: Digital Marketing, Excel, Canva",
+      "Day 8-14: Record video lessons and create practical assignments",
+      "Day 15-20: Build simple LMS (learning management system) web app",
+      "Day 21-25: Beta launch with 50 students at 50% discount",
+      "Day 26-30: Collect testimonials, add certificate verification system"
+    ]
+  },
+  {
+    "id": "ed02",
+    "business_name": "CodeSiksha",
+    "category": "EdTech",
+    "is_high_risk": false,
+    "what_it_does": "Interactive coding education platform with a Nepali-first approach. Teaches programming through a browser-based code editor with real-time feedback, guided projects, and a learning path from zero to job-ready — all explained in Nepali.",
+    "where_working": "USA — Codecademy ($200M+ revenue), FreeCodeCamp. India — Scaler ($700M valuation). Southeast Asia — Refocus (Philippines, raised $20M).",
+    "why_growing": "Nepal's IT sector grew 25% in 2025 but faces a 15K+ developer talent gap. Most coding resources are in English, creating a barrier. Nepali IT companies are desperate to hire trained developers. Remote work opportunities make coding the highest-ROI skill for Nepali youth.",
+    "nepal_adaptation": "All explanations and comments in Nepali. Curriculum aligned with what Nepali IT companies actually hire for: JavaScript, Python, React, Node.js. Include job placement support with local IT companies. Community-driven: peer coding sessions, Nepali mentor network. Price: ₨1499-4999 per learning path.",
+    "startup_cost": "Low",
+    "cost_estimate": "₨3-6 Lakhs",
+    "monetization": "Course/path fees. Job placement commission from hiring companies. Corporate upskilling packages. Freemium (free HTML/CSS, paid advanced tracks).",
+    "action_plan": [
+      "Day 1-7: Build browser-based code editor with auto-grading",
+      "Day 8-14: Create first learning path: Web Development Foundations (in Nepali)",
+      "Day 15-20: Record 20 video lessons with Nepali explanations",
+      "Day 21-25: Launch beta with 100 students via college CS departments",
+      "Day 26-30: Add community forum and peer review system"
+    ]
+  },
+  {
+    "id": "ed03",
+    "business_name": "VidyaBot",
+    "category": "EdTech",
+    "is_high_risk": false,
+    "what_it_does": "WhatsApp-based learning companion for school students (Grade 8-12). Students send questions via WhatsApp, and the AI explains concepts, solves math problems step-by-step, provides practice questions, and sends daily revision quizzes — all through chat.",
+    "where_working": "India — Doubtnut (acquired for $150M+), Kunduz. Africa — Shupavu291 (Kenya, SMS-based learning). Latin America — Platzi (Colombia).",
+    "why_growing": "Not every student in Nepal can afford a tuition teacher (₨3K-8K/month). WhatsApp is already on every student's phone — zero adoption friction. AI can explain the same concept 100 different ways until the student understands. Works even in areas with no coaching centers.",
+    "nepal_adaptation": "Support Nepal's SEE and NEB curriculum specifically. Math, Science, English as initial subjects. Step-by-step solutions with Nepali explanations. Daily quiz push at 7 PM for revision habit building. Price: ₨199-499/month (1/10th the cost of private tuition). Partner with local teachers for content verification.",
+    "startup_cost": "Low",
+    "cost_estimate": "₨2-4 Lakhs",
+    "monetization": "Monthly student subscription. Premium: unlimited questions, video explanations. School/coaching center B2B packages.",
+    "action_plan": [
+      "Day 1-7: Build WhatsApp bot with question-answering pipeline",
+      "Day 8-14: Upload SEE math and science curriculum as knowledge base",
+      "Day 15-20: Test with 30 students from different schools",
+      "Day 21-25: Add daily quiz feature and progress tracking",
+      "Day 26-30: Launch marketing through parent Facebook groups"
+    ]
+  },
+  {
+    "id": "ed04",
+    "business_name": "PadhaiMate",
+    "category": "EdTech",
+    "is_high_risk": false,
+    "what_it_does": "AI study assistant for competitive exam prep (Loksewa/PSC, IOE, Medical entrance, SEE). Generates personalized study plans, practice questions, flashcards, and mock tests. Adapts to each student's weak areas using spaced repetition.",
+    "where_working": "India — Physics Wallah ($5B valuation), Testbook, Embibe. USA — Quizlet AI. Southeast Asia — Manabie.",
+    "why_growing": "500K+ students sit for competitive exams annually in Nepal. Prep resources are offline-heavy, expensive, and not personalized. AI generates unlimited practice questions from any syllabus. Mobile-first study tools see 3x higher engagement.",
+    "nepal_adaptation": "Start with Loksewa (PSC) prep — massive demand, digitally underserved. Upload official syllabus and past papers. Nepali language with English technical terms. Mobile-first PWA. Gamification: streaks, leaderboards. Price: ₨299-999/month. Partner with coaching centers for B2B.",
+    "startup_cost": "Low",
+    "cost_estimate": "₨3-8 Lakhs",
+    "monetization": "Freemium: free basic quizzes → paid full access. B2B to coaching centers. One-time exam bundles (e.g., Loksewa Full Pack ₨1,499).",
+    "action_plan": [
+      "Day 1-7: Collect Loksewa past papers + syllabus, build question bank with AI",
+      "Day 8-14: Build mobile-friendly quiz engine with spaced repetition",
+      "Day 15-20: Beta test with 50 Loksewa aspirants via Facebook groups",
+      "Day 21-25: Add personalized weak-area analysis and adaptive difficulty",
+      "Day 26-30: Launch marketing on TikTok + Loksewa Facebook groups"
+    ]
+  },
+  {
+    "id": "crm01",
+    "business_name": "BizChat Nepal",
+    "category": "CRM & Automation",
+    "is_high_risk": false,
+    "what_it_does": "WhatsApp-first CRM for Nepali SMBs. Manages customer contacts, sends automated follow-ups, runs promotional campaigns, collects payments, and tracks sales — all through WhatsApp, the channel customers already use daily.",
+    "where_working": "India — Interakt, AiSensy, Wati.io (50K+ SMBs each). Brazil — WhatsApp commerce is $1B+ ecosystem. Singapore — Sleekflow.",
+    "why_growing": "WhatsApp has 98% penetration among Nepal's smartphone users. Small businesses spend 2-3 hours/day manually messaging customers. WhatsApp Business API now affordable. CRM adoption in Nepal is below 2% among SMBs — massive greenfield opportunity.",
+    "nepal_adaptation": "Pre-built templates for Nepali business types: restaurants, salons, tuition centers. eSewa/Khalti/Fonepay in-chat payment. Nepali UI — no other WhatsApp CRM offers this. Start with Kathmandu Valley (50K+ registered small businesses). Price: ₨999-2999/month vs $50-100 for Indian tools.",
+    "startup_cost": "Medium",
+    "cost_estimate": "₨5-12 Lakhs",
+    "monetization": "Monthly SaaS subscription (tiered by contacts). Per-message above free tier. Premium: AI auto-replies, analytics, payment integration.",
+    "action_plan": [
+      "Day 1-7: Apply for WhatsApp Business API access, set up infrastructure",
+      "Day 8-14: Build core: contact management, broadcast, auto-reply",
+      "Day 15-20: Pilot with 10 local businesses (restaurants + salons)",
+      "Day 21-25: Add payment integration (eSewa/Khalti) and analytics",
+      "Day 26-30: Create Nepali demo videos, launch on Facebook business groups"
+    ]
+  },
+  {
+    "id": "crm02",
+    "business_name": "TravelDesk Pro",
+    "category": "CRM & Automation",
+    "is_high_risk": false,
+    "what_it_does": "All-in-one CRM and booking management system for Nepal's 3,000+ travel and trekking agencies. Manages client inquiries, itinerary planning, guide/porter assignments, booking confirmations, payment tracking, and post-trip review collection.",
+    "where_working": "USA — TrekkSoft (Switzerland, specialized in tour operators). India — ResAvenue, eZee. Southeast Asia — Tourwriter (New Zealand, used across SE Asia).",
+    "why_growing": "Nepal's tourism revenue hit $700M+ in 2025. Most agencies manage bookings on Excel/WhatsApp. Lost inquiries = lost revenue (agencies report 30% inquiry leakage). Guide/porter scheduling conflicts are a daily operational headache.",
+    "nepal_adaptation": "Built specifically for Nepal trekking/tourism workflow: trek permits, TIMS cards, guide licensing. Integration with Nepali payment systems. Multi-language client communication (English, Chinese, Japanese, Korean). Offline-capable for agencies in trekking regions. Price: ₨1999-4999/month per agency.",
+    "startup_cost": "Medium",
+    "cost_estimate": "₨5-10 Lakhs",
+    "monetization": "Monthly SaaS per agency. Commission on bookings processed. Premium: multi-branch, API integrations with OTAs.",
+    "action_plan": [
+      "Day 1-7: Map the complete travel agency workflow through 5 agency interviews",
+      "Day 8-14: Build inquiry management and itinerary planner",
+      "Day 15-20: Add guide/porter scheduling and availability tracker",
+      "Day 21-25: Pilot with 5 agencies in Thamel",
+      "Day 26-30: Add client communication automation and review collection"
+    ]
+  },
+  {
+    "id": "crm03",
+    "business_name": "ProposalPilot",
+    "category": "CRM & Automation",
+    "is_high_risk": false,
+    "what_it_does": "AI-driven tool for freelancers and small agencies that generates winning client proposals, tracks project pipelines, manages invoices, and provides AI-coached communication. HubSpot meets AI — built for freelancers in emerging markets.",
+    "where_working": "USA — Bonsai, HoneyBook, Moxie ($10M+ ARR each). Europe — AND.CO (acquired by Fiverr). India — growing demand from 15M+ freelancers.",
+    "why_growing": "Nepal has 100K+ freelancers on Upwork, Fiverr, Freelancer. Freelancers lose 30% of projects due to poor proposals. No tool is localized for South Asian freelancers. AI can generate tailored proposals in 30 seconds by analyzing job postings.",
+    "nepal_adaptation": "Target Nepal's IT freelancers. Pre-load winning Upwork/Fiverr templates. AI-coach: analyzes job posting → generates proposal. Invoice generator with NPR + USD. Build community: Nepal Freelancers Hub. Price: ₨499-1499/month.",
+    "startup_cost": "Low",
+    "cost_estimate": "₨2-5 Lakhs",
+    "monetization": "Freemium: 5 free proposals/month → paid unlimited. Lifetime deal for early adopters (₨4,999). Affiliate commissions from platforms.",
+    "action_plan": [
+      "Day 1-5: Research top 100 winning Upwork proposals, build training dataset",
+      "Day 6-12: Develop MVP: AI proposal generator + project tracker",
+      "Day 13-18: Test with 20 Nepali freelancers for quality feedback",
+      "Day 19-24: Add invoice generation and client pipeline management",
+      "Day 25-30: Launch on Product Hunt + Nepali freelancer Facebook groups"
+    ]
+  },
+  {
+    "id": "dm01",
+    "business_name": "PostMaster Nepal",
+    "category": "Digital Marketing",
+    "is_high_risk": false,
+    "what_it_does": "Social media scheduling and analytics platform built for Nepal's market. Schedule posts across Facebook, Instagram, TikTok, and YouTube. Get analytics in Nepali, best-posting-time suggestions using Nepal-specific data, and AI caption generation in Nepali/English.",
+    "where_working": "USA — Buffer ($20M+ ARR), Hootsuite, Later. India — Statusbrew. Southeast Asia — Promo Republic.",
+    "why_growing": "5,000+ businesses and agencies in Nepal actively manage social media but use no scheduling tools. Buffer/Hootsuite cost $15-100/month (expensive for Nepal). Nepal-specific posting time analytics don't exist. TikTok Nepal growing at 200% year-over-year needs management tools.",
+    "nepal_adaptation": "Nepali language captions and hashtag suggestions. Nepal timezone best-posting-time data. Support Nepali festivals/events calendar for content planning (Dashain, Tihar, Holi). TikTok Nepal analytics (competitors lack this). Price: ₨499-1499/month vs $15-100 for international tools.",
+    "startup_cost": "Low",
+    "cost_estimate": "₨3-6 Lakhs",
+    "monetization": "Monthly subscription tiered by accounts/posts. Agency tier with client management. Add-on: AI content generation credits.",
+    "action_plan": [
+      "Day 1-7: Build scheduling engine with Facebook and Instagram API integration",
+      "Day 8-14: Add TikTok scheduling (using their Content Posting API)",
+      "Day 15-20: Build analytics dashboard with Nepal posting-time insights",
+      "Day 21-25: Add AI caption generator with Nepali language support",
+      "Day 26-30: Offer free 1-month trial to 30 digital marketing agencies"
+    ]
+  },
+  {
+    "id": "dm02",
+    "business_name": "ReviewRaksha",
+    "category": "Digital Marketing",
+    "is_high_risk": false,
+    "what_it_does": "Online reputation and review management platform for Nepali businesses. Monitors Google, Facebook, TripAdvisor, and Daraz reviews in one dashboard. Sends instant alerts for new reviews, generates AI response suggestions, and helps businesses collect more positive reviews via automated SMS/WhatsApp follow-ups.",
+    "where_working": "USA — Birdeye ($100M+ revenue), Podium ($3B valuation). India — Zceppa. Europe — Trustpilot (Denmark, $1B+ valuation).",
+    "why_growing": "Google reviews directly impact local business visibility — 88% of consumers trust online reviews. Nepal's restaurants, hotels, and clinics are getting reviewed but rarely respond. Negative reviews left unanswered cost businesses 30% of potential customers. No Nepal-focused review tool exists.",
+    "nepal_adaptation": "Monitor Nepal-relevant platforms: Google Maps, Facebook Pages, TripAdvisor, Daraz seller reviews. AI response templates in Nepali. Automated review request via SMS after service (Sparrow SMS API). Start with Thamel restaurants/hotels and medical clinics. Price: ₨699-1999/month.",
+    "startup_cost": "Low",
+    "cost_estimate": "₨2-5 Lakhs",
+    "monetization": "Monthly SaaS subscription. Premium: multi-location, competitor monitoring. Review generation campaigns as add-on service.",
+    "action_plan": [
+      "Day 1-7: Build review aggregation from Google Maps and Facebook APIs",
+      "Day 8-14: Create unified dashboard with alert notifications",
+      "Day 15-20: Add AI-powered response suggestion engine",
+      "Day 21-25: Build automated review request system (SMS after visit)",
+      "Day 26-30: Pilot with 10 Thamel restaurants and 5 clinics"
+    ]
+  },
+  {
+    "id": "dm03",
+    "business_name": "RepostAI Nepal",
+    "category": "Digital Marketing",
+    "is_high_risk": false,
+    "what_it_does": "Takes a single content piece (blog post, YouTube video, podcast) and automatically generates 10-15 platform-specific outputs: Facebook posts, TikTok scripts, Instagram carousel text, Twitter threads, LinkedIn posts, and email newsletter snippets.",
+    "where_working": "USA — Opus Pro, Repurpose.io, Castmagic. India — growing adoption among D2C brands. Creator economy valued at $234B+.",
+    "why_growing": "Businesses need omnichannel presence but lack time. AI APIs make this buildable at low cost. Content marketing budgets shifting from paid ads to organic repurposing. Nepal's 5K+ active creators need this desperately.",
+    "nepal_adaptation": "Support Nepali + English bilingual generation. Integrate with platforms popular in Nepal: Facebook, TikTok, Instagram, YouTube. NPR pricing (₨500-2000/month). Partner with Nepali creator communities. Add WhatsApp-friendly output formats.",
+    "startup_cost": "Low",
+    "cost_estimate": "₨2-5 Lakhs",
+    "monetization": "Freemium: 3 repurposes/month → paid unlimited. Agency white-label tier. Per-credit pay-as-you-go.",
+    "action_plan": [
+      "Day 1-5: Build MVP using OpenAI API + simple web frontend",
+      "Day 6-10: Test with 10 Nepali creators for feedback",
+      "Day 11-15: Iterate, add Nepali language generation",
+      "Day 16-20: Launch free 1-month access to first 100 users",
+      "Day 21-25: Partner with 3 digital marketing agencies",
+      "Day 26-30: Implement eSewa/Khalti payments, launch paid plans"
+    ]
+  },
+  {
+    "id": "mp01",
+    "business_name": "KaamGarau",
+    "category": "Marketplace",
+    "is_high_risk": false,
+    "what_it_does": "On-demand local services marketplace connecting verified service providers (plumbers, electricians, painters, AC repair, cleaning) with customers. Features real-time booking, transparent pricing, worker ratings, and digital payments. The Urban Company model for Nepal.",
+    "where_working": "India — Urban Company ($2.8B valuation, 10M+ customers). Southeast Asia — Helpling (Singapore), ServisHero (Malaysia). USA — TaskRabbit (acquired by IKEA).",
+    "why_growing": "Finding reliable service providers in Nepal takes 5-10 phone calls and hope. No price transparency — every worker charges differently. Trust deficit — no verification or rating system. Urban Company proved the model works in price-sensitive South Asian markets.",
+    "nepal_adaptation": "Start with 5 high-demand services: plumbing, electrical, AC/fridge repair, house cleaning, painting. Vet and train 100 providers in Kathmandu Valley initially. Standardized pricing by service type. Nepali language app. eSewa/Khalti + cash payment options. Service guarantee for trust building.",
+    "startup_cost": "Medium",
+    "cost_estimate": "₨5-15 Lakhs",
+    "monetization": "Commission per booking (15-25%). Service provider subscription for premium leads. Maintenance contract packages for commercial clients.",
+    "action_plan": [
+      "Day 1-7: Research pricing benchmarks for top 5 services in Kathmandu",
+      "Day 8-14: Build booking platform (mobile-first web app)",
+      "Day 15-20: Recruit and verify 30 service providers across 5 categories",
+      "Day 21-25: Launch beta in 3 Kathmandu neighborhoods",
+      "Day 26-30: Collect 50+ customer reviews, iterate on matching algorithm"
+    ]
+  },
+  {
+    "id": "mp02",
+    "business_name": "FreshBasket",
+    "category": "Marketplace",
+    "is_high_risk": false,
+    "what_it_does": "Farm-to-doorstep fresh produce marketplace connecting local farmers directly with urban consumers. Farmers list their produce with photos and prices; consumers order online for next-morning delivery. Eliminates 3-4 middlemen, giving farmers 30-50% higher prices and consumers 20% lower prices.",
+    "where_working": "India — BigHaat, DeHaat ($160M raised), Ninjacart ($500M valuation). Southeast Asia — TaniHub (Indonesia). China — Pinduoduo (agri-commerce).",
+    "why_growing": "Kathmandu Valley consumes 1,500 tons of vegetables daily. Current supply chain has 4 middlemen, each taking 15-20% margin. Consumers want fresh, traceable produce. Farmers earn only 20-30% of retail price. COVID accelerated online grocery adoption in Nepal.",
+    "nepal_adaptation": "Start with Kathmandu Valley: source from Bhaktapur, Kavre, Dhading farmers. Evening ordering window with 6 AM next-day delivery. Collection points at local dairy shops for cost-effective last-mile delivery. Focus on vegetables plus seasonal fruits first. Viber group ordering for neighborhood bulk buys.",
+    "startup_cost": "Medium",
+    "cost_estimate": "₨8-15 Lakhs",
+    "monetization": "10-15% commission per transaction. Subscription boxes (weekly vegetable basket). Delivery fees for individual orders.",
+    "action_plan": [
+      "Day 1-7: Visit 20 farms in Bhaktapur/Kavre, sign up 10 farmers",
+      "Day 8-14: Build simple ordering app with product catalog",
+      "Day 15-18: Set up logistics: cold bags, delivery routes, collection points",
+      "Day 19-25: Pilot in 2 Kathmandu neighborhoods with 50 families",
+      "Day 26-30: Optimize delivery routes, add Viber ordering bot"
+    ]
+  },
+  {
+    "id": "mp03",
+    "business_name": "RentKaro Nepal",
+    "category": "Marketplace",
+    "is_high_risk": false,
+    "what_it_does": "Equipment and asset rental marketplace. Rent anything from cameras and projectors to power tools, party supplies, trekking gear, and construction equipment — by the day or week. Includes verification, insurance, and secure payments.",
+    "where_working": "USA — Fat Llama ($14M raised), Neighbor. India — RentMojo ($100M+ raised), Furlenco. Europe — Grover (Germany, $1B+ valuation).",
+    "why_growing": "Buying expensive equipment for one-time use is wasteful. DSLR cameras cost ₨100K+ but are needed only for events. Students need projectors/speakers for presentations. Construction contractors need specialized tools for specific jobs. Sharing economy mindset is growing globally.",
+    "nepal_adaptation": "Start with high-demand categories: cameras/photography gear, projectors, trekking equipment, party/event supplies. Target Kathmandu college students + event organizers + trekking tourists. Digital deposit via eSewa (refundable). Verification: citizenship + social media ID. Neighborhood pickup points to reduce logistics cost.",
+    "startup_cost": "Low",
+    "cost_estimate": "₨3-6 Lakhs",
+    "monetization": "Commission per rental (15-20%). Renter verification fee. Optional insurance add-on. Featured listings for commercial renters.",
+    "action_plan": [
+      "Day 1-7: Build rental listing platform with availability calendar",
+      "Day 8-14: Recruit 50 initial owners (cameras, projectors, trekking gear)",
+      "Day 15-20: Implement deposit and payment system via eSewa",
+      "Day 21-25: Launch in Kathmandu, target college event season",
+      "Day 26-30: Add renter/owner rating system and rental insurance option"
+    ]
+  },
+  {
+    "id": "mp04",
+    "business_name": "BookSwap Nepal",
+    "category": "Marketplace",
+    "is_high_risk": false,
+    "what_it_does": "Peer-to-peer textbook and course material exchange platform. Students list used textbooks, notes, and course materials; buyers get them at 50-70% discount. Includes campus-specific sections, subject search, and condition ratings.",
+    "where_working": "USA — Chegg ($1B+ marketplace revenue), BookScouter. India — KitabBazaar, BookFlow. UK — AbeBooks (Amazon subsidiary).",
+    "why_growing": "Nepali students spend ₨5K-15K per semester on textbooks. Books are used for one semester then sit unused. No organized resale market (only random Facebook posts). Same textbooks are prescribed year after year — ready-made demand. Environmental consciousness is growing.",
+    "nepal_adaptation": "Campus-specific sections: TU, KU, PU, Pokhara University. Subject and semester filters for quick matching. Campus meetup points for zero-shipping trades. Quality rating system (highlighted, dog-eared, like-new). Also include printed class notes and past exam papers. Free to list, small fee on transactions.",
+    "startup_cost": "Low",
+    "cost_estimate": "₨1-3 Lakhs",
+    "monetization": "Small listing fee or transaction commission (10%). Featured listing upgrades. Advertising from bookstores and coaching centers.",
+    "action_plan": [
+      "Day 1-5: Build listing platform with campus, subject, and semester filters",
+      "Day 6-10: Seed with 200 listings from TU students (buy and list initial inventory)",
+      "Day 11-15: Launch campus ambassador program at TU and KU",
+      "Day 16-22: Add in-app messaging and campus meetup scheduling",
+      "Day 23-27: Partner with campus bookstores for buy-back program",
+      "Day 28-30: Expand marketing to all major universities via notices and social media"
+    ]
+  },
+  {
+    "id": "cr01",
+    "business_name": "CourseBazaar Nepal",
+    "category": "Creator Economy",
+    "is_high_risk": false,
+    "what_it_does": "Platform for Nepali experts to create and sell online courses. Provides course builder (video hosting, quizzes, certificates), payment processing, student management, and marketing tools. Think Udemy but localized for Nepal/Nepali content.",
+    "where_working": "USA — Teachable ($250M valuation), Thinkific. India — Graphy ($5M+ ARR), Classplus. Southeast Asia — Cakap (Indonesia).",
+    "why_growing": "Nepal has thousands of experts (teachers, professionals, craftspeople) with no way to monetize their knowledge beyond physical classrooms. Nepali-language courses are extremely scarce online. Digital course market in India grew 40x in 5 years — Nepal is 3-5 years behind on this trend.",
+    "nepal_adaptation": "Full Nepali platform. eSewa/Khalti enrollment payments. Mobile-optimized video player (low bandwidth support). Courses in Nepali-relevant subjects: cooking, SLC/SEE prep, IELTS, traditional arts, farming techniques. Revenue share: 80% creator / 20% platform. Start by onboarding 20 popular YouTube educators.",
+    "startup_cost": "Medium",
+    "cost_estimate": "₨5-10 Lakhs",
+    "monetization": "Revenue share on course sales (20%). Subscription for premium creator tools. Transaction processing fees.",
+    "action_plan": [
+      "Day 1-7: Build course creation tool: video upload, curriculum builder, quiz maker",
+      "Day 8-14: Add student enrollment and payment integration (eSewa/Khalti)",
+      "Day 15-20: Create certificate generation system with verification link",
+      "Day 21-25: Onboard 5 popular Nepali YouTube educators to create courses",
+      "Day 26-30: Launch marketing campaign showcasing early creator earnings"
+    ]
+  },
+  {
+    "id": "cr02",
+    "business_name": "SubStack Nepal (SabdaKosh)",
+    "category": "Creator Economy",
+    "is_high_risk": false,
+    "what_it_does": "Newsletter and blog monetization platform for Nepali writers, journalists, and thought leaders. Writers get a beautiful publication, subscriber management, and the ability to charge for premium content — building direct relationships with their audience.",
+    "where_working": "USA — Substack ($585M valuation), Beehiiv ($1B valuation), Ghost. India — Kutuki (regional language content). Europe — Steady (Germany).",
+    "why_growing": "Nepal's media landscape is shifting; journalists are leaving traditional media to go independent. 500+ active Nepali bloggers/writers have no monetization tool. Paid newsletter market in India grew 300% in 2024-2025. Nepali diaspora (5M+) craves quality Nepali content.",
+    "nepal_adaptation": "Native Devanagari typography and Nepali script rendering. eSewa/Khalti subscription payments. Free tier for audience building + paid tier for premium content. Target: Nepali journalists, political commentators, financial advisors, tech writers. Reach diaspora audience in Gulf, USA, Australia.",
+    "startup_cost": "Low",
+    "cost_estimate": "₨2-4 Lakhs",
+    "monetization": "Revenue share on paid subscriptions (10%). Premium writer tools (analytics, custom domains). Advertising marketplace connecting brands with newsletters.",
+    "action_plan": [
+      "Day 1-7: Build newsletter creation and publishing engine with Devanagari support",
+      "Day 8-14: Add subscriber management and email delivery system",
+      "Day 15-20: Implement paid subscription with eSewa/Khalti",
+      "Day 21-25: Onboard 10 popular Nepali writers/journalists to pilot",
+      "Day 26-30: Launch publicly, promote through writer networks"
+    ]
+  },
+  {
+    "id": "st01",
+    "business_name": "ScholarPath Nepal",
+    "category": "Student Services",
+    "is_high_risk": false,
+    "what_it_does": "AI-powered scholarship matching platform. Students create a profile (grades, interests, financial background), and the AI matches them with relevant scholarships from Nepal and 50+ countries. Includes application deadline tracking, document checklists, and SOP/essay templates.",
+    "where_working": "USA — Going Merry, Scholly ($100M+ in matched scholarships). India — Buddy4Study (5M+ students). Europe — Scholarship.com network.",
+    "why_growing": "10K+ Nepali students apply abroad annually; most don't know about available scholarships. ₨500M+ in scholarship money goes unclaimed each year due to information gaps. Education consultancies charge ₨50K-200K but provide generic advice. AI can personalize matching at scale.",
+    "nepal_adaptation": "Database of scholarships available to Nepali citizens specifically. Include Nepal government scholarships (TU, KU), embassy scholarships, university-specific aid. SOP templates tailored for Nepali students. Document preparation checklist per country. Integration with consultancies for application support referrals.",
+    "startup_cost": "Low",
+    "cost_estimate": "₨2-5 Lakhs",
+    "monetization": "Freemium: free basic matching → paid premium ($499-1499 for full access). Referral commission from education consultancies. University advertising/listing fees.",
+    "action_plan": [
+      "Day 1-7: Compile database of 500+ scholarships available to Nepali students",
+      "Day 8-14: Build student profile system and AI matching algorithm",
+      "Day 15-20: Add deadline tracking and document checklist features",
+      "Day 21-25: Beta test with 100 students preparing for abroad studies",
+      "Day 26-30: Partner with 5 education consultancies for referral pipeline"
+    ]
+  },
+  {
+    "id": "st02",
+    "business_name": "KothaBhada",
+    "category": "Student Services",
+    "is_high_risk": false,
+    "what_it_does": "Student housing and roommate matching platform for Nepal. Find verified rooms, flats, and hostels near colleges with photos, pricing, amenities, and landlord ratings. Includes roommate matching based on lifestyle preferences and budget.",
+    "where_working": "USA — Zillow Student Housing, RoomSync. India — Stanza Living ($500M+ valuation), OYO Life. Southeast Asia — 99.co (Singapore).",
+    "why_growing": "200K+ students move to Kathmandu Valley annually for studies. Finding a room takes 3-7 days of physical searching. Landlords don't advertise online effectively. Roommate mismatches cause 40% of early lease terminations. No dedicated student housing platform exists.",
+    "nepal_adaptation": "Focus on TU, KU, PU campus neighborhoods. Verified listings with real photos (team does physical verification). Student-specific filters: price range, distance to campus, meal options, WiFi. Roommate matching quiz. Landlord rating system. Campus ambassador program for listings and leads.",
+    "startup_cost": "Low",
+    "cost_estimate": "₨2-5 Lakhs",
+    "monetization": "Landlord listing fees (₨500-2000/listing). Featured listing upgrades. Referral fee on successful moves. Premium roommate matching.",
+    "action_plan": [
+      "Day 1-7: Map rooms/flats around TU and KU campuses personally",
+      "Day 8-14: Build listing platform with search, filter, and map view",
+      "Day 15-20: Photograph and verify 100 initial listings",
+      "Day 21-25: Launch campus ambassador program at TU and KU",
+      "Day 26-30: Add roommate matching feature and landlord review system"
+    ]
+  },
+  {
+    "id": "hr01",
+    "business_name": "BolBot Nepal",
+    "category": "AI / Deep Tech",
+    "is_high_risk": true,
+    "what_it_does": "AI-powered voice agent that handles inbound customer calls in Nepali language — answering FAQs, taking orders, booking appointments, and routing complex queries to human agents. A 24/7 Nepali-speaking AI receptionist for businesses.",
+    "where_working": "USA — Bland.ai, Air.ai, Vapi ($100M+ combined raised in 2025). India — Sarvam AI (Indic-language voice AI). UK — PolyAI ($150M+ raised).",
+    "why_growing": "Voice AI market projected at $50B+ by 2028. 40% of Nepal's internet users prefer voice over text. Businesses lose 60% of after-hours calls = lost revenue. Nepali language AI models maturing (Google Gemini supports Nepali).",
+    "nepal_adaptation": "Start with ISP customer support (Worldlink, Vianet). Use Google Cloud Speech-to-Text (supports Nepali) + fine-tuned LLM. Hybrid: AI handles 70% calls, routes 30% to humans. Price: ₨5K-15K/month vs hiring a receptionist at ₨20K+. Collect Nepali voice data to improve accuracy.",
+    "startup_cost": "High",
+    "cost_estimate": "₨10-25 Lakhs",
+    "monetization": "Monthly subscription per phone line. Per-minute call handling fees. Setup + customization fees. Data licensing.",
+    "high_risk_reason": "Nepali speech recognition accuracy is still ~85% (vs 97% for English). Customer trust for AI voice is unproven in Nepal. Requires investment in Nepali voice training data. Regulatory uncertainty around AI communications.",
+    "high_risk_reward": "Zero competition in Nepali-language voice AI. First-mover captures entire market. Every bank, airline, ISP, hospital needs this. Expandable to Hindi, Bengali, Maithili. Government e-governance contract potential.",
+    "action_plan": [
+      "Day 1-7: Build proof-of-concept Nepali voice recognition + AI response pipeline",
+      "Day 8-14: Test accuracy with 100 sample customer service scenarios",
+      "Day 15-20: Approach 3 ISPs in Kathmandu for pilot partnership",
+      "Day 21-25: Deploy on single test phone line, monitor and fine-tune",
+      "Day 26-30: Document metrics and cost savings, create investor pitch deck"
+    ]
+  },
+  {
+    "id": "hr02",
+    "business_name": "LandChain Nepal",
+    "category": "Blockchain / GovTech",
+    "is_high_risk": true,
+    "what_it_does": "Blockchain-based land ownership verification and transfer system. Creates tamper-proof digital records of land ownership, enabling instant verification of land titles, reducing fraud, and streamlining property transfers that currently take months.",
+    "where_working": "India — ChromaWay (Swedish, pilot with Andhra Pradesh government). Georgia — Bitfury land registry project. Ghana — BenBen (land titling startup).",
+    "why_growing": "Nepal's land disputes constitute 60%+ of civil court cases. Current paper-based Land Revenue Office records are vulnerable to fraud and tampering. Property transactions take 2-6 months due to manual verification. Government has expressed interest in digital land records.",
+    "nepal_adaptation": "Start as a verification layer (not replacement) for existing land records. Partner with legal firms for document digitization. Integrate with Nepal's Land Revenue Office data. Charge verification fees per query. Scale to smart contracts for property transfers. Target real estate companies for initial B2B adoption.",
+    "startup_cost": "High",
+    "cost_estimate": "₨15-40 Lakhs",
+    "monetization": "Per-verification query fees. Enterprise subscriptions for real estate firms, banks. Government contract for system integration. Transaction fees on smart contract transfers.",
+    "high_risk_reason": "Government buy-in is uncertain and slow. Regulatory framework for blockchain land records doesn't exist in Nepal. Requires digitization of paper records (enormous effort). Technical complexity of reliable blockchain systems.",
+    "high_risk_reward": "Solving the #1 civil dispute in Nepal. Potential government contract worth billions. Once adopted, creates massive switching costs. Applicable to all property-based transactions: banking, insurance, legal.",
+    "action_plan": [
+      "Day 1-7: Research Nepal land registry systems and meet with legal experts",
+      "Day 8-14: Build blockchain verification prototype with sample land records",
+      "Day 15-20: Create demo for stakeholders: real estate agents, banks, lawyers",
+      "Day 21-25: Approach 3 law firms for pilot program partnership",
+      "Day 26-30: Prepare government proposal and policy brief for digital land records"
+    ]
+  },
+  {
+    "id": "hr03",
+    "business_name": "DroneMap Nepal",
+    "category": "DeepTech / GIS",
+    "is_high_risk": true,
+    "what_it_does": "Drone-based aerial survey, mapping, and 3D modeling service for construction, agriculture, land planning, and disaster assessment. Uses AI to process drone imagery into detailed topographic maps, orthophotos, and volumetric calculations.",
+    "where_working": "USA — DroneDeploy ($500M+ valuation), Skydio. India — Skylark Drones ($50M+ in contracts). Southeast Asia — Terra Drone (Japan, expanded regionally).",
+    "why_growing": "Nepal's terrain makes traditional ground surveys extremely expensive and time-consuming. Post-earthquake reconstruction still needs accurate 3D mapping. Hydropower projects ($10B+ pipeline) need topographic surveys. Agricultural land optimization can increase yields by 20-30%.",
+    "nepal_adaptation": "Target hydropower companies (survey before construction), construction firms, and government disaster management. Partner with Nepal Civil Aviation Authority for drone permits. Offer 60% cost savings vs traditional ground survey. Train team on Nepal's mountainous terrain flying. Start with Kathmandu Valley construction projects.",
+    "startup_cost": "High",
+    "cost_estimate": "₨15-30 Lakhs",
+    "monetization": "Per-project survey fees. Subscription for ongoing monitoring (construction progress). Government contracts for disaster mapping. Training and certification courses for drone operators.",
+    "high_risk_reason": "Drone regulation in Nepal is evolving and uncertain. High upfront equipment cost (₨5-15 Lakhs for professional survey drones). Mountainous terrain creates flight challenges. Limited trained drone pilots available.",
+    "high_risk_reward": "₨5B+ addressable market in Nepal (hydropower + construction). Government disaster response contracts (post-earthquake, flood mapping). First professional drone survey company captures entire market. Expandable to environmental monitoring, mining, and telecom tower planning.",
+    "action_plan": [
+      "Day 1-7: Obtain drone operation permits from Nepal Civil Aviation Authority",
+      "Day 8-14: Purchase survey drone and complete test flights in Kathmandu Valley",
+      "Day 15-20: Conduct 2 sample surveys for construction sites (free/discounted)",
+      "Day 21-25: Process imagery into deliverable maps and 3D models",
+      "Day 26-30: Present results to 5 hydropower/construction companies for contracts"
+    ]
+  },
+  {
+    "id": "hr04",
+    "business_name": "NepalAI Health",
+    "category": "AI / HealthTech",
+    "is_high_risk": true,
+    "what_it_does": "AI-powered preliminary health screening app. Users describe symptoms (voice or text in Nepali), and the AI provides possible condition assessments, urgency levels, nearest appropriate health facility recommendations, and first-aid guidance. Not a replacement for doctors — a triage assistant.",
+    "where_working": "USA — Ada Health (10M+ users), Buoy Health. India — Practo (diagnosis feature), mFine. Africa — Ada Health Africa, Babyl Rwanda (serving 2M+ patients).",
+    "why_growing": "65% of Nepal's population lacks access to a nearby doctor (rural areas). Unnecessary hospital visits for minor conditions overwhelm the healthcare system. AI triage can direct patients to the right level of care — reducing wait times and costs. Works on basic smartphones with low bandwidth.",
+    "nepal_adaptation": "Nepali language voice input for rural users. Map of Nepal health posts, hospitals, pharmacies for location-based referral. Integrate with Nepal's free government health services information. Offline-capable triage for areas with poor connectivity. Partner with Nepal Medical Association for clinical validation. Free service with revenue from health facility partnerships.",
+    "startup_cost": "High",
+    "cost_estimate": "₨10-25 Lakhs",
+    "monetization": "Health facility referral fees. Health insurance partnerships. Premium telemedicine add-on. Government public health contract. Pharmaceutical company advertising (ethical, non-prescription).",
+    "high_risk_reason": "Medical AI accuracy is critical — wrong triage can be dangerous. Regulatory approval for health apps is undefined in Nepal. Doctor resistance to AI-based preliminary diagnosis. Liability concerns for incorrect assessments.",
+    "high_risk_reward": "Addressing Nepal's #1 challenge: healthcare access for 18M rural citizens. Government public health partnership potential. Life-saving impact creates massive brand trust. Expandable to telemedicine, health records, insurance. WHO/UNICEF funding opportunities for health innovation.",
+    "action_plan": [
+      "Day 1-7: Partner with 3 Nepali doctors for clinical advisory and symptom database",
+      "Day 8-14: Build symptom assessment engine with decision tree + AI",
+      "Day 15-20: Map all health facilities in Kathmandu Valley with services offered",
+      "Day 21-25: Test with 100 real symptom cases (with doctor verification)",
+      "Day 26-30: Pilot at 2 community health posts for triage assistance"
+    ]
+  },
+  {
+    "id": "hr05",
+    "business_name": "SolarShare Nepal",
+    "category": "CleanTech / Platform",
+    "is_high_risk": true,
+    "what_it_does": "Peer-to-peer solar energy trading platform. Households with rooftop solar panels sell excess electricity to neighbors through a digital marketplace. Includes smart metering, automated billing, and a community energy dashboard.",
+    "where_working": "Australia — Power Ledger ($30M+ raised). Bangladesh — SOLshare (peer-to-peer solar grids in rural areas, serving 10K+ households). Europe — Vandebron (Netherlands), SonnenCommunity (Germany).",
+    "why_growing": "Nepal generates excess solar potential but 30% of rooftop solar energy goes unused. Electricity demand exceeds supply during peak hours. Government promoting solar with subsidies but no framework for peer selling. Micro-grids can solve rural electrification faster than grid expansion.",
+    "nepal_adaptation": "Start with 1 Kathmandu neighborhood as pilot micro-grid. Partner with existing solar installation companies. Lobby for peer-to-peer energy selling regulation (Nepal Electricity Authority). Smart meter integration for automated billing. Community energy dashboard showing generation, consumption, savings. Target housing colonies and apartment complexes.",
+    "startup_cost": "High",
+    "cost_estimate": "₨20-50 Lakhs",
+    "monetization": "Transaction fee on energy trades (5-10%). Smart meter hardware sales. Energy management consulting. Carbon credit generation and trading.",
+    "high_risk_reason": "Nepal's energy regulation doesn't currently allow peer-to-peer electricity selling. Requires hardware investment in smart meters. Nepal Electricity Authority may resist disruption. Technical complexity of micro-grid management.",
+    "high_risk_reward": "Nepal has 300+ sunny days/year — enormous solar potential. If regulation passes, first-mover captures entire market. Government renewable energy targets create policy tailwind. Carbon credits provide additional revenue stream. Scalable to every neighborhood in Nepal.",
+    "action_plan": [
+      "Day 1-7: Research Nepal energy regulations, consult with energy lawyers",
+      "Day 8-14: Design smart metering and billing platform prototype",
+      "Day 15-20: Partner with 2 solar installation companies for pilot",
+      "Day 21-25: Identify and approach a housing colony for community pilot",
+      "Day 26-30: Create regulatory proposal for Nepal Electricity Authority + investor pitch"
+    ]
+  },
+  {
+    "id": "hr06",
+    "business_name": "AgriSense Nepal",
+    "category": "AI / AgriTech",
+    "is_high_risk": true,
+    "what_it_does": "AI-powered crop disease detection and farming advisory using smartphone photos and satellite data. Farmers photograph their crops, AI identifies diseases/pests within seconds and recommends treatments. Also provides weather-based planting schedules and market price predictions for harvest timing.",
+    "where_working": "India — CropIn ($30M+ raised), Plantix (20M+ downloads). Africa — Apollo Agriculture (Kenya). Indonesia — TaniHub Group.",
+    "why_growing": "Agriculture is 25% of Nepal's GDP but loses 20-30% of yield to preventable crop diseases. Extension workers cover only 15% of farming communities. Smartphone penetration among farmers reached 60%+ in 2025. AI can identify 95%+ of common crop diseases from photos.",
+    "nepal_adaptation": "Train on Nepal-specific crops: rice, maize, lentils, tea, cardamom, vegetables. Nepali language voice-based advisory for low-literacy users. Integrate with Nepal Meteorological Department weather data. Connect with local agro-vet shops for treatment purchase. Free for farmers; revenue from agro-input companies and government programs.",
+    "startup_cost": "High",
+    "cost_estimate": "₨10-20 Lakhs",
+    "monetization": "Agro-input company partnerships (lead generation for treatments). Government agricultural extension contracts. Premium crop insurance facilitation. Data licensing to research institutions.",
+    "high_risk_reason": "Requires building Nepal-specific crop disease AI datasets from scratch. Farmer technology adoption in rural areas is slow. Revenue model depends on B2B partnerships (agro companies, government). Accuracy in Nepal's diverse microclimates is challenging.",
+    "high_risk_reward": "Addressing food security for 28M people. Government smart agriculture contracts potential. World Bank/ADB agricultural development funding opportunities. Data moat: first company with Nepal crop disease dataset owns the market. Expandable to livestock health, soil analysis, and market price predictions.",
+    "action_plan": [
+      "Day 1-7: Collect 1000+ crop disease photos from Nepali farms (field visits)",
+      "Day 8-14: Train disease detection AI model on Nepal-specific crops",
+      "Day 15-20: Build farmer-friendly mobile app with Nepali voice guidance",
+      "Day 21-25: Field test with 50 farmers in Chitwan/Kavre districts",
+      "Day 26-30: Partner with 3 agro-vet companies for treatment recommendations"
+    ]
+  }
+]

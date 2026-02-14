@@ -1,0 +1,20 @@
+# Sensitive credentials
+config.json
+
+# Local history (optional, keep this if you want persistence across pulls)
+# sent_history.json
+# pending_details.json
+# processed_replies.json
+
+# Logs
+*.log
+automation.log
+cron_reply.log
+cron.log
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Local reports (optional)
+reports/

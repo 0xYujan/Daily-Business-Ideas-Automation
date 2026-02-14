@@ -1,0 +1,66 @@
+{
+  "date": "2026-02-14",
+  "date_display": "February 14, 2026",
+  "ideas": {
+    "KaamGarau": {
+      "id": "mp01",
+      "business_name": "KaamGarau",
+      "category": "Marketplace",
+      "is_high_risk": false,
+      "what_it_does": "On-demand local services marketplace connecting verified service providers (plumbers, electricians, painters, AC repair, cleaning) with customers. Features real-time booking, transparent pricing, worker ratings, and digital payments. The Urban Company model for Nepal.",
+      "where_working": "India — Urban Company ($2.8B valuation, 10M+ customers). Southeast Asia — Helpling (Singapore), ServisHero (Malaysia). USA — TaskRabbit (acquired by IKEA).",
+      "why_growing": "Finding reliable service providers in Nepal takes 5-10 phone calls and hope. No price transparency — every worker charges differently. Trust deficit — no verification or rating system. Urban Company proved the model works in price-sensitive South Asian markets.",
+      "nepal_adaptation": "Start with 5 high-demand services: plumbing, electrical, AC/fridge repair, house cleaning, painting. Vet and train 100 providers in Kathmandu Valley initially. Standardized pricing by service type. Nepali language app. eSewa/Khalti + cash payment options. Service guarantee for trust building.",
+      "startup_cost": "Medium",
+      "cost_estimate": "₨5-15 Lakhs",
+      "monetization": "Commission per booking (15-25%). Service provider subscription for premium leads. Maintenance contract packages for commercial clients.",
+      "action_plan": [
+        "Day 1-7: Research pricing benchmarks for top 5 services in Kathmandu",
+        "Day 8-14: Build booking platform (mobile-first web app)",
+        "Day 15-20: Recruit and verify 30 service providers across 5 categories",
+        "Day 21-25: Launch beta in 3 Kathmandu neighborhoods",
+        "Day 26-30: Collect 50+ customer reviews, iterate on matching algorithm"
+      ]
+    },
+    "SkillBridge Nepal": {
+      "id": "ed01",
+      "business_name": "SkillBridge Nepal",
+      "category": "EdTech",
+      "is_high_risk": false,
+      "what_it_does": "Micro-certification platform offering 2-4 week practical skill courses in high-demand areas: digital marketing, Excel/data analysis, graphic design, basic coding, video editing. Each course ends with a verifiable digital certificate and portfolio project.",
+      "where_working": "India — Internshala Trainings (10M+ learners). USA — Coursera, Skillshare. Southeast Asia — Cakap (Indonesia), Refocus (Philippines).",
+      "why_growing": "Nepal's job market increasingly demands digital skills not taught in colleges. Short, focused courses outperform 4-year degrees for skill acquisition. Employers value portfolio projects over certificates. 300K+ Nepali students graduate annually needing employable skills.",
+      "nepal_adaptation": "Courses in Nepali with English technical terms. Focus on skills demanded in Nepal job market: Excel, Canva, social media management, WordPress. Include real client projects (partner with local businesses). Verifiable blockchain-like certificates. Price: ₨999-2999 per course (vs ₨15K+ for traditional training).",
+      "startup_cost": "Low",
+      "cost_estimate": "₨2-5 Lakhs",
+      "monetization": "Per-course fees. Employer hiring partnerships. Subscription for all-access. Corporate training packages.",
+      "action_plan": [
+        "Day 1-7: Design 3 initial courses: Digital Marketing, Excel, Canva",
+        "Day 8-14: Record video lessons and create practical assignments",
+        "Day 15-20: Build simple LMS (learning management system) web app",
+        "Day 21-25: Beta launch with 50 students at 50% discount",
+        "Day 26-30: Collect testimonials, add certificate verification system"
+      ]
+    },
+    "ReviewRaksha": {
+      "id": "dm02",
+      "business_name": "ReviewRaksha",
+      "category": "Digital Marketing",
+      "is_high_risk": false,
+      "what_it_does": "Online reputation and review management platform for Nepali businesses. Monitors Google, Facebook, TripAdvisor, and Daraz reviews in one dashboard. Sends instant alerts for new reviews, generates AI response suggestions, and helps businesses collect more positive reviews via automated SMS/WhatsApp follow-ups.",
+      "where_working": "USA — Birdeye ($100M+ revenue), Podium ($3B valuation). India — Zceppa. Europe — Trustpilot (Denmark, $1B+ valuation).",
+      "why_growing": "Google reviews directly impact local business visibility — 88% of consumers trust online reviews. Nepal's restaurants, hotels, and clinics are getting reviewed but rarely respond. Negative reviews left unanswered cost businesses 30% of potential customers. No Nepal-focused review tool exists.",
+      "nepal_adaptation": "Monitor Nepal-relevant platforms: Google Maps, Facebook Pages, TripAdvisor, Daraz seller reviews. AI response templates in Nepali. Automated review request via SMS after service (Sparrow SMS API). Start with Thamel restaurants/hotels and medical clinics. Price: ₨699-1999/month.",
+      "startup_cost": "Low",
+      "cost_estimate": "₨2-5 Lakhs",
+      "monetization": "Monthly SaaS subscription. Premium: multi-location, competitor monitoring. Review generation campaigns as add-on service.",
+      "action_plan": [
+        "Day 1-7: Build review aggregation from Google Maps and Facebook APIs",
+        "Day 8-14: Create unified dashboard with alert notifications",
+        "Day 15-20: Add AI-powered response suggestion engine",
+        "Day 21-25: Build automated review request system (SMS after visit)",
+        "Day 26-30: Pilot with 10 Thamel restaurants and 5 clinics"
+      ]
+    }
+  }
+}
